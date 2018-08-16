@@ -3636,11 +3636,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Model\\NC.Model.csproj",
+      "projectUniqueName": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj",
       "projectName": "NC.Model",
-      "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Model\\NC.Model.csproj",
+      "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj",
       "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-      "outputPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Model\\obj\\",
+      "outputPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

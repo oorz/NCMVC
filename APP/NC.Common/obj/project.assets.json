@@ -6340,11 +6340,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Common\\NC.Common.csproj",
+      "projectUniqueName": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj",
       "projectName": "NC.Common",
-      "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Common\\NC.Common.csproj",
+      "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj",
       "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-      "outputPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Common\\obj\\",
+      "outputPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
