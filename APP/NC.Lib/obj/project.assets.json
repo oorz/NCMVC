@@ -12858,11 +12858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj",
+      "projectUniqueName": "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj",
       "projectName": "NC.Lib",
-      "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj",
+      "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj",
       "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-      "outputPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\obj\\",
+      "outputPath": "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12881,14 +12881,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj": {
-              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj"
+            "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj": {
+              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj"
             },
-            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Core\\NC.Core.csproj": {
-              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Core\\NC.Core.csproj"
+            "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Core\\NC.Core.csproj": {
+              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Core\\NC.Core.csproj"
             },
-            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj": {
-              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj"
+            "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj": {
+              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj"
             }
           }
         }

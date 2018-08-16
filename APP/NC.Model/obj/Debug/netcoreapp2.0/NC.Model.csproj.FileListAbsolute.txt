@@ -42,3 +42,14 @@ G:\魏亚东2018\DEV\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.Assembl
 G:\魏亚东2018\DEV\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.AssemblyInfo.cs
 G:\魏亚东2018\DEV\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.dll
 G:\魏亚东2018\DEV\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.pdb
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\bin\Debug\netcoreapp2.0\NC.Model.deps.json
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\bin\Debug\netcoreapp2.0\NC.Model.runtimeconfig.json
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\bin\Debug\netcoreapp2.0\NC.Model.runtimeconfig.dev.json
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\bin\Debug\netcoreapp2.0\NC.Model.dll
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\bin\Debug\netcoreapp2.0\NC.Model.pdb
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.csprojAssemblyReference.cache
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.csproj.CoreCompileInputs.cache
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.AssemblyInfoInputs.cache
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.AssemblyInfo.cs
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.dll
+G:\魏亚东2018\DEV\NCMVC\NCMVC\APP\NC.Model\obj\Debug\netcoreapp2.0\NC.Model.pdb

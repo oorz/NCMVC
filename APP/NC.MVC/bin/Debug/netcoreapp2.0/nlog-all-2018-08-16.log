@@ -844,3 +844,36 @@ WHERE [mr].[id] = @__siteAdminInfo_RoleId_0
 2018-08-16 18:33:45.3713|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
 2018-08-16 18:33:45.3713|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
 2018-08-16 18:33:45.3965|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 4434.0506ms 200 text/html; charset=utf-8 
+2018-08-16 18:55:45.5960|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use KeyTransformer Type : 'Enyim.Caching.Memcached.DefaultKeyTransformer' 
+2018-08-16 18:55:45.6886|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use Transcoder Type : 'Enyim.Caching.Memcached.DefaultTranscoder' 
+2018-08-16 18:55:45.7905|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Pool has been inited for 192.168.2.11:11211 with 10 sockets 
+2018-08-16 18:55:45.8136|Enyim.Caching.Configuration.MemcachedClientConfiguration|INFO|MemcachedInitPool-cost: 73.3152ms 
+2018-08-16 18:55:45.8239|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:55:45.8509|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket 47232396-7665-4b0e-a9cc-22a473460016 was reset 
+2018-08-16 18:55:45.8561|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. 47232396-7665-4b0e-a9cc-22a473460016 
+2018-08-16 18:55:45.9134|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket 47232396-7665-4b0e-a9cc-22a473460016 
+2018-08-16 18:55:45.9375|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:55:46.6300|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:5000/   
+2018-08-16 18:55:46.7335|Microsoft.AspNetCore.Session.SessionMiddleware|WARN|Error unprotecting the session cookie. The payload was invalid.
+2018-08-16 18:55:46.8848|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Authorization failed for the request at filter 'NC.Lib.UserAuthorizeAttribute'. 
+2018-08-16 18:55:46.8848|Microsoft.AspNetCore.Mvc.Internal.RedirectResultExecutor|INFO|Executing RedirectResult, redirecting to /login?returnUrl=/. 
+2018-08-16 18:55:46.8848|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action NC.MVC.Controllers.HomeController.Index (NC.MVC) in 38.9096ms 
+2018-08-16 18:55:46.9102|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("b427db6b-bf9f-a432-e30d-29b4414b871a") 
+2018-08-16 18:55:46.9102|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:55:46.9192|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket 47232396-7665-4b0e-a9cc-22a473460016 was reset 
+2018-08-16 18:55:46.9192|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. 47232396-7665-4b0e-a9cc-22a473460016 
+2018-08-16 18:55:46.9192|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket 47232396-7665-4b0e-a9cc-22a473460016 
+2018-08-16 18:55:46.9342|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:55:46.9545|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 332.902ms 302  
+2018-08-16 18:55:46.9545|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:5000/login?returnUrl=/   
+2018-08-16 18:55:46.9693|Microsoft.AspNetCore.Session.SessionMiddleware|WARN|Error unprotecting the session cookie. The payload was invalid.
+2018-08-16 18:55:46.9899|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method NC.MVC.Controllers.LoginController.Index (NC.MVC) with arguments ((null)) - ModelState is Valid 
+2018-08-16 18:55:51.3091|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|INFO|Executing ViewResult, running view at path /Views/Login/Index.cshtml. 
+2018-08-16 18:55:51.5766|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action NC.MVC.Controllers.LoginController.Index (NC.MVC) in 4589.6982ms 
+2018-08-16 18:55:51.5942|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("83c3c242-a34f-f59b-5521-642872adb003") 
+2018-08-16 18:55:51.6071|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:55:51.6071|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket 47232396-7665-4b0e-a9cc-22a473460016 was reset 
+2018-08-16 18:55:51.6071|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. 47232396-7665-4b0e-a9cc-22a473460016 
+2018-08-16 18:55:51.6256|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket 47232396-7665-4b0e-a9cc-22a473460016 
+2018-08-16 18:55:51.6256|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:55:51.6449|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 4679.1708ms 200 text/html; charset=utf-8 
