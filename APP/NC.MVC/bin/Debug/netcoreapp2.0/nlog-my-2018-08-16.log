@@ -1,0 +1,483 @@
+2018-08-16 14:56:36.2523|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use KeyTransformer Type : 'Enyim.Caching.Memcached.DefaultKeyTransformer' 
+2018-08-16 14:56:36.4161|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use Transcoder Type : 'Enyim.Caching.Memcached.DefaultTranscoder' 
+2018-08-16 14:56:36.6549|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Pool has been inited for 192.168.2.11:11211 with 10 sockets 
+2018-08-16 14:56:36.6549|Enyim.Caching.Configuration.MemcachedClientConfiguration|INFO|MemcachedInitPool-cost: 114.5706ms 
+2018-08-16 14:56:36.6672|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 14:56:36.6672|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 14:56:36.6980|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:56:36.7836|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:56:36.7836|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 14:56:39.0387|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("7816684e-90bb-b9ce-0505-0d401bea4f39") 
+2018-08-16 14:56:39.0435|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 14:56:39.0435|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 14:56:39.0435|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:56:39.0582|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:56:39.0582|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 14:56:44.9951|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("f1e84cc9-ac45-b75a-7fe2-5896153bf860") 
+2018-08-16 14:56:46.1083|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:56:46.1083|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Could not init pool. 
+2018-08-16 14:56:46.1235|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Mark as dead was requested for 192.168.2.66:11211 
+2018-08-16 14:56:46.1235|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|FailurePolicy.ShouldFail(): True 
+2018-08-16 14:56:46.1235|Enyim.Caching.Configuration.MemcachedClientConfiguration|WARN|Marking node 192.168.2.66:11211 as dead 
+2018-08-16 14:56:46.1427|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Node 192.168.2.66:11211 is dead. 
+2018-08-16 14:56:46.1427|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Starting the recovery timer. 
+2018-08-16 14:56:46.1537|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Timer started. 
+2018-08-16 14:56:46.1537|Enyim.Caching.Configuration.MemcachedClientConfiguration|INFO|MemcachedInitPool-cost: 1085.6191ms 
+2018-08-16 14:56:46.1537|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.66:11211 
+2018-08-16 14:56:46.1705|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Pool is dead or disposed, returning null. 192.168.2.66:11211 
+2018-08-16 14:56:56.1666|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:56:56.1666|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:56:56.1666|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:56:57.1920|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:56:57.1920|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:56:57.2005|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:57:07.2055|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:57:07.2055|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:57:07.2131|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:57:08.2282|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:57:08.2439|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:57:08.2439|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:57:18.2558|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:57:18.2614|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:57:18.2614|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:57:19.2746|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:57:19.2790|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:57:19.2790|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:57:29.2864|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:57:29.2864|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:57:29.2935|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:57:30.3008|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:57:30.3008|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:57:30.3111|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:57:40.3177|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:57:40.3265|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:57:40.3265|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:57:41.3490|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:57:41.3598|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:57:41.3691|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:57:51.3789|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:57:51.3883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:57:51.3883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:57:52.4075|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:57:52.4075|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:57:52.4264|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:58:02.4328|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:58:02.4328|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:58:02.4505|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:58:03.4601|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:58:03.4643|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:58:03.4643|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:58:13.4752|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:58:13.4840|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:58:13.4840|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:58:14.5104|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:58:14.5104|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:58:14.5292|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:58:19.9646|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("e894b94e-8157-a393-0477-20bef75ff247") 
+2018-08-16 14:58:19.9646|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 14:58:19.9806|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 14:58:19.9806|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:58:19.9806|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:58:19.9960|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 14:58:20.0824|HomeController|INFO|普通信息日志----------- 
+2018-08-16 14:58:20.0824|HomeController|DEBUG|调试日志----------- 
+2018-08-16 14:58:20.0824|HomeController|ERROR|错误日志----------- 
+2018-08-16 14:58:20.0887|HomeController|FATAL|异常日志----------- 
+2018-08-16 14:58:20.0887|HomeController|WARN|警告日志----------- 
+2018-08-16 14:58:20.0887|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 14:58:20.0887|HomeController|WARN|Log日志------------------ 
+2018-08-16 14:58:24.5458|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:58:24.5458|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:58:24.5458|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:58:25.5631|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:58:25.5631|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:58:25.5719|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:58:35.5779|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:58:35.5779|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:58:35.5938|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:58:36.8699|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:58:36.8699|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:58:36.9076|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 14:59:38.0676|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("59cc5a68-1d21-77c4-172a-f56ad2bb2ccb") 
+2018-08-16 14:59:38.0945|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 14:59:38.0945|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 14:59:38.1047|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:59:38.1372|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 14:59:38.1549|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 14:59:38.1995|HomeController|INFO|普通信息日志----------- 
+2018-08-16 14:59:38.1995|HomeController|DEBUG|调试日志----------- 
+2018-08-16 14:59:38.1995|HomeController|ERROR|错误日志----------- 
+2018-08-16 14:59:38.1995|HomeController|FATAL|异常日志----------- 
+2018-08-16 14:59:38.1995|HomeController|WARN|警告日志----------- 
+2018-08-16 14:59:38.1995|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 14:59:38.1995|HomeController|WARN|Log日志------------------ 
+2018-08-16 14:59:47.9377|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 14:59:47.9377|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 14:59:47.9377|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 14:59:48.9558|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 14:59:48.9558|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 14:59:48.9661|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:00:10.0098|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:00:10.0098|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:00:10.0259|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:00:10.0259|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("54a36af0-b269-bfb1-d26a-4870657124c6") 
+2018-08-16 15:00:10.0259|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 15:00:10.0446|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 15:00:10.0446|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 15:00:10.0446|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 15:00:10.0626|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 15:00:11.0463|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:00:11.0463|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:00:11.0588|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:00:21.0654|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:00:21.0745|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:00:21.0745|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:00:22.0978|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:00:22.0978|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:00:22.1083|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:00:24.3867|HomeController|INFO|普通信息日志----------- 
+2018-08-16 15:00:24.4013|HomeController|DEBUG|调试日志----------- 
+2018-08-16 15:00:24.4013|HomeController|ERROR|错误日志----------- 
+2018-08-16 15:00:24.4013|HomeController|FATAL|异常日志----------- 
+2018-08-16 15:00:24.4013|HomeController|WARN|警告日志----------- 
+2018-08-16 15:00:24.4013|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 15:00:24.4013|HomeController|WARN|Log日志------------------ 
+2018-08-16 15:00:32.1253|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:00:32.1253|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:00:32.1253|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:00:33.1457|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:00:33.1511|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:00:33.1511|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:01:51.3210|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:01:51.3862|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:01:51.4399|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:01:51.4672|HomeController|INFO|普通信息日志----------- 
+2018-08-16 15:01:51.4672|HomeController|DEBUG|调试日志----------- 
+2018-08-16 15:01:51.4672|HomeController|ERROR|错误日志----------- 
+2018-08-16 15:01:51.4802|HomeController|FATAL|异常日志----------- 
+2018-08-16 15:01:51.4802|HomeController|WARN|警告日志----------- 
+2018-08-16 15:01:51.4802|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 15:01:51.4802|HomeController|WARN|Log日志------------------ 
+2018-08-16 15:01:52.4779|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:01:52.4833|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:01:52.4833|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:02:02.5002|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:02:02.5002|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:02:02.5002|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:02:03.5179|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:02:03.5179|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:02:03.5283|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:02:21.8655|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:02:21.9057|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:02:21.9057|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("db2e2b80-4cc3-01f6-e29a-9e8a93dba0b8") 
+2018-08-16 15:02:21.9057|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:02:21.9194|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 15:02:21.9194|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 15:02:21.9194|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 15:02:21.9365|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 15:02:21.9365|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 15:02:22.9390|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:02:22.9390|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:02:22.9524|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:02:32.9698|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:02:32.9698|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:02:32.9803|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:02:33.9890|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:02:33.9890|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:02:33.9978|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:02:44.0159|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:02:44.0251|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:02:44.0251|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:02:45.0430|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:02:45.0430|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:02:45.0430|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:02:55.0704|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:02:55.0830|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:02:55.0953|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:02:56.1181|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:02:56.1259|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:02:56.1259|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:03:02.1375|HomeController|INFO|普通信息日志----------- 
+2018-08-16 15:03:02.1375|HomeController|DEBUG|调试日志----------- 
+2018-08-16 15:03:02.1375|HomeController|ERROR|错误日志----------- 
+2018-08-16 15:03:02.1375|HomeController|FATAL|异常日志----------- 
+2018-08-16 15:03:02.1375|HomeController|WARN|警告日志----------- 
+2018-08-16 15:03:02.1375|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 15:03:02.1375|HomeController|WARN|Log日志------------------ 
+2018-08-16 15:03:06.1383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:03:06.1383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:03:06.1383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:03:07.1567|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:03:07.1567|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:03:07.1761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:06:59.5245|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:06:59.5414|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:06:59.5414|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:06:59.5565|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("1f94b88c-460e-4828-fac9-a0be0faa79fd") 
+2018-08-16 15:06:59.5565|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 15:06:59.5777|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 was reset 
+2018-08-16 15:06:59.5777|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 15:06:59.5874|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket fa6cb618-d45a-4d77-8726-8b81ae8848d3 
+2018-08-16 15:06:59.5874|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 15:07:00.5650|Enyim.Caching.Configuration.MemcachedClientConfiguration|ERROR|Create PooledSocket Could not connect to 192.168.2.66:11211
+2018-08-16 15:07:00.5650|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Still dead. 
+2018-08-16 15:07:00.5761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|deadCount == 1, starting the timer. 
+2018-08-16 15:07:10.5808|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Checking the dead servers. 
+2018-08-16 15:07:10.5808|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Alive: 192.168.2.11:11211 
+2018-08-16 15:07:10.5891|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Dead: 192.168.2.66:11211 
+2018-08-16 15:07:46.4704|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use KeyTransformer Type : 'Enyim.Caching.Memcached.DefaultKeyTransformer' 
+2018-08-16 15:07:46.5114|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use Transcoder Type : 'Enyim.Caching.Memcached.DefaultTranscoder' 
+2018-08-16 15:07:46.5776|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Pool has been inited for 192.168.2.11:11211 with 10 sockets 
+2018-08-16 15:07:46.5776|Enyim.Caching.Configuration.MemcachedClientConfiguration|INFO|MemcachedInitPool-cost: 40.127ms 
+2018-08-16 15:07:46.5876|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 15:07:46.5876|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 15:07:46.5876|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 15:07:46.6215|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 15:07:46.6215|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 15:07:47.4041|HomeController|INFO|普通信息日志----------- 
+2018-08-16 15:07:47.4041|HomeController|DEBUG|调试日志----------- 
+2018-08-16 15:07:47.4041|HomeController|ERROR|错误日志----------- 
+2018-08-16 15:07:47.4041|HomeController|FATAL|异常日志----------- 
+2018-08-16 15:07:47.4041|HomeController|WARN|警告日志----------- 
+2018-08-16 15:07:47.4041|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 15:07:47.4041|HomeController|WARN|Log日志------------------ 
+2018-08-16 15:07:51.9655|HomeController|INFO|普通信息日志----------- 
+2018-08-16 15:07:51.9655|HomeController|DEBUG|调试日志----------- 
+2018-08-16 15:07:51.9655|HomeController|ERROR|错误日志----------- 
+2018-08-16 15:07:51.9655|HomeController|FATAL|异常日志----------- 
+2018-08-16 15:07:51.9655|HomeController|WARN|警告日志----------- 
+2018-08-16 15:07:51.9655|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 15:07:51.9655|HomeController|WARN|Log日志------------------ 
+2018-08-16 15:08:03.2622|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("7ae8c249-3d7a-db40-b145-7c25965d46a8") 
+2018-08-16 15:08:03.2622|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("b077b45f-85e4-6bb8-5c2d-6db2630ace83") 
+2018-08-16 15:08:03.2622|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 15:08:03.2761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 15:08:03.2761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 15:08:03.2761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 15:08:03.2761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 15:08:03.2761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 15:08:03.2761|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 15:08:03.2940|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 15:08:03.2940|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 15:08:03.3081|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:01:16.7600|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("56231585-dab6-4dc6-1d17-bfdbf100e34b") 
+2018-08-16 16:01:16.7600|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:01:16.7600|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:01:16.7600|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:16.7600|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:16.7600|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:01:20.7049|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("811026fa-c0a9-89e3-5022-4347c4da600f") 
+2018-08-16 16:01:20.7049|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:01:20.7049|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:01:20.7049|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:20.7139|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:20.7139|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:01:27.2916|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("f9f8cf56-618d-ca57-278c-705149dbfcbb") 
+2018-08-16 16:01:27.2916|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:01:27.2916|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:01:27.2916|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:27.2916|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:27.2916|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:01:27.3089|HomeController|INFO|普通信息日志----------- 
+2018-08-16 16:01:27.3089|HomeController|DEBUG|调试日志----------- 
+2018-08-16 16:01:27.3089|HomeController|ERROR|错误日志----------- 
+2018-08-16 16:01:27.3089|HomeController|FATAL|异常日志----------- 
+2018-08-16 16:01:27.3089|HomeController|WARN|警告日志----------- 
+2018-08-16 16:01:27.3089|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 16:01:27.3089|HomeController|WARN|Log日志------------------ 
+2018-08-16 16:01:41.8489|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("d580b0a9-f843-670f-1c0e-d3fbae339f7f") 
+2018-08-16 16:01:41.8489|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:01:41.8489|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:01:41.8547|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:41.8547|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:01:41.8547|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:03.7163|HomeController|INFO|普通信息日志----------- 
+2018-08-16 16:07:03.7163|HomeController|DEBUG|调试日志----------- 
+2018-08-16 16:07:03.7163|HomeController|ERROR|错误日志----------- 
+2018-08-16 16:07:03.7163|HomeController|FATAL|异常日志----------- 
+2018-08-16 16:07:03.7163|HomeController|WARN|警告日志----------- 
+2018-08-16 16:07:03.7287|HomeController|TRACE|跟踪日志----------- 
+2018-08-16 16:07:03.7287|HomeController|WARN|Log日志------------------ 
+2018-08-16 16:07:05.5488|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("c7ac71a6-5e75-de6b-f784-d652befc0bb9") 
+2018-08-16 16:07:05.5488|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:05.5488|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:05.5488|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:05.5588|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:05.5588|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:05.5767|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("3f1f3ae0-6ec0-b3e4-559a-aeec2b27a532") 
+2018-08-16 16:07:05.5767|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("fdbb1ec7-3e12-7d73-9ba8-b315b19f4f8b") 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:05.5883|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:05.6639|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("ca06c89f-f50c-ecf9-a512-327e91c61da0") 
+2018-08-16 16:07:05.6674|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:05.6674|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:05.6674|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:05.6674|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:05.6674|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:08.9341|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("ee2b31cc-8f16-e50c-25a2-172eeeded483") 
+2018-08-16 16:07:08.9341|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:08.9341|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:08.9341|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:08.9517|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:08.9517|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:09.0911|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("47d13db6-d5a7-bb4a-8491-9774ef127012") 
+2018-08-16 16:07:09.0911|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:09.0911|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:09.0911|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:09.0911|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:09.0911|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:16.7841|Enyim.Caching.MemcachedClient|INFO|Get("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:16.7841|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:16.7906|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:16.7906|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.7906|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.7906|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:16.7906|Enyim.Caching.MemcachedClient|INFO|GetAsync("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:16.8101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:16.8101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:16.8101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.8101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.8101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:16.8260|Enyim.Caching.MemcachedClient|INFO|SetAsync("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:16.8260|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:16.8260|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:16.8260|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:16.8383|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:17.2010|Enyim.Caching.MemcachedClient|INFO|Get("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:17.2010|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:17.2010|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:17.2010|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:17.2010|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:17.2010|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:17.9163|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:17.9163|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:17.9163|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:17.9163|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:17.9163|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:17.9163|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:17.9910|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:17.9950|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:17.9950|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:17.9950|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:17.9950|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.0101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:18.0101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 was reset 
+2018-08-16 16:07:18.0101|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:18.0101|Enyim.Caching.MemcachedClient|INFO|Get("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:18.0273|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:18.0273|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket e0d29c19-9272-43f2-9ccb-7c1d3427e398 
+2018-08-16 16:07:18.0273|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.0273|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:18.0431|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.0431|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.0431|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.2945|Enyim.Caching.MemcachedClient|INFO|Get("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:18.2945|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:18.2945|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:18.2945|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.3084|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.3084|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.5164|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:18.5164|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:18.5164|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:18.5164|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:18.5257|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.5414|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:18.5414|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:18.9555|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:18.9790|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:19.0095|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:19.0095|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.0095|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.0095|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:19.0095|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.0266|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.0418|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:19.3074|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("bed23eb4-00ca-ebab-1d36-229065ff4c0c") 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:19.3074|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 was reset 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket c78fc4d8-0bc3-4978-aa11-131cf50bca56 
+2018-08-16 16:07:19.3246|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:27:01.0601|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use KeyTransformer Type : 'Enyim.Caching.Memcached.DefaultKeyTransformer' 
+2018-08-16 18:27:01.2114|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use Transcoder Type : 'Enyim.Caching.Memcached.DefaultTranscoder' 
+2018-08-16 18:27:01.3435|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Pool has been inited for 192.168.2.11:11211 with 10 sockets 
+2018-08-16 18:27:01.3435|Enyim.Caching.Configuration.MemcachedClientConfiguration|INFO|MemcachedInitPool-cost: 85.9623ms 
+2018-08-16 18:27:01.3554|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:27:01.3554|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket 6ed37931-e706-43db-85e8-09e8562e071f was reset 
+2018-08-16 18:27:01.3554|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. 6ed37931-e706-43db-85e8-09e8562e071f 
+2018-08-16 18:27:01.4218|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket 6ed37931-e706-43db-85e8-09e8562e071f 
+2018-08-16 18:27:01.4218|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:27:02.7196|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("89595c32-39f5-e260-ebc8-9d5354a35a82") 
+2018-08-16 18:27:02.7196|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:27:02.7290|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket 6ed37931-e706-43db-85e8-09e8562e071f was reset 
+2018-08-16 18:27:02.7290|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. 6ed37931-e706-43db-85e8-09e8562e071f 
+2018-08-16 18:27:02.7290|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket 6ed37931-e706-43db-85e8-09e8562e071f 
+2018-08-16 18:27:02.7450|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:27:08.2196|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("c2417085-280f-fb47-b94a-91ae1348b2e6") 
+2018-08-16 18:27:08.2307|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:27:08.2307|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket 6ed37931-e706-43db-85e8-09e8562e071f was reset 
+2018-08-16 18:27:08.2307|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. 6ed37931-e706-43db-85e8-09e8562e071f 
+2018-08-16 18:27:08.2485|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket 6ed37931-e706-43db-85e8-09e8562e071f 
+2018-08-16 18:27:08.2485|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:33:39.6103|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use KeyTransformer Type : 'Enyim.Caching.Memcached.DefaultKeyTransformer' 
+2018-08-16 18:33:39.7110|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Use Transcoder Type : 'Enyim.Caching.Memcached.DefaultTranscoder' 
+2018-08-16 18:33:39.8090|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Pool has been inited for 192.168.2.11:11211 with 10 sockets 
+2018-08-16 18:33:39.8090|Enyim.Caching.Configuration.MemcachedClientConfiguration|INFO|MemcachedInitPool-cost: 70.4684ms 
+2018-08-16 18:33:39.8407|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:33:39.8680|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa was reset 
+2018-08-16 18:33:39.8716|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
+2018-08-16 18:33:39.9058|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
+2018-08-16 18:33:39.9299|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:33:40.9071|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("5edbaf51-af55-ffe6-ecfb-4c4a9ed2f8e2") 
+2018-08-16 18:33:40.9071|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:33:40.9071|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa was reset 
+2018-08-16 18:33:40.9213|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
+2018-08-16 18:33:40.9213|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
+2018-08-16 18:33:40.9213|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 
+2018-08-16 18:33:45.3404|Enyim.Caching.MemcachedClient|INFO|RefreshAsync("3f035582-8fae-cfbb-a22e-0406f9362fa4") 
+2018-08-16 18:33:45.3404|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Acquiring stream from pool. 192.168.2.11:11211 
+2018-08-16 18:33:45.3575|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa was reset 
+2018-08-16 18:33:45.3575|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Socket was reset. f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
+2018-08-16 18:33:45.3713|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Releasing socket f5ba09e9-969d-4f62-9ba8-39faa1eb95fa 
+2018-08-16 18:33:45.3713|Enyim.Caching.Configuration.MemcachedClientConfiguration|DEBUG|Are we alive? True 

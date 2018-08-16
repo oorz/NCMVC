@@ -1,0 +1,107 @@
+﻿@{
+    /*
+    *说明：数据库备份
+    *作者：wyd 2016-11-30
+    *修改：
+    *备注：/admin/manager/databackup
+    */
+}
+@{
+    ViewBag.Title = "数据库备份";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+<!--如果做跨服务器备份，可以考虑把备份路径存入数据库，恢复时从数据库中拿bak路径;数据库备份,应用程序必须与数据库在同一服务器-->
+<div class="main-content">
+    <div class="page-content">
+        <div class="page-header">
+            <div class="toolbar">
+                <div class="l-list">
+                    <ul class="icon-list">
+                        <li><a id="btnSave" class="save" href="javascript:;"><i class="fa fa-save"></i><span>备份数据库</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.page-header -->
+
+        <table class="table table-striped table-bordered table-hover ltable">
+            <thead>
+                <tr>
+                    <th width="20%" align="left">
+                        文件名称
+                    </th>
+                    <th width="15%">
+                        备份时间
+                    </th>
+                    <th width="12%">
+                        操作
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow dr in ViewBag.DBack.Rows)
+                {
+                    <tr>
+                        <td>@dr["filename"]</td>
+                        <td>@dr["createdate"]</td>
+                        <td><a href="javascript:;" class="restfile" data-attr="@dr["filename"]">恢复备份</a> | <a href="javascript:;');" class="dbackdel" data-attr="@dr["filename"]">删除备份</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section includeJs{
+    <script type="text/javascript">
+    $(function () {
+        //保存
+        $("#btnSave").click(function () {
+            $.ajaxGetJson("@Url.Action("Backfile", "Settings", new { Area = "ad_min" })", "", function (result) {
+                var url = "databackup";
+                delAlert(result.msg, url);
+                $("#btnSave").attr("disabled", false);
+            }
+            , function () { }
+            , function (XMLHttpRequest) {//beforeSend
+                $("#btnSave").attr("disabled", true);
+                $("#btnSave").css({ "color": "red" });
+            });
+
+        });
+
+        //恢复备份
+        $(".restfile").click(function () {
+            var fname = $(this).attr("data-attr");
+            $confirm("为了您系统的安全！请尽量进入服务器手动进行恢复！", function () {
+                $.ajaxGetJson("@Url.Action("Restfile", "Settings", new { Area = "ad_min" })", { fname: fname }, function (result) {
+                    var url = "databackup";
+                    delAlert(result.msg, url);
+                }
+                , function () { }
+                , function (XMLHttpRequest) {//beforeSend
+                    $(".restfile").attr("disabled", true);
+                });
+
+            })
+        });
+        //删除备份
+        $(".dbackdel").click(function () {
+            var fname = $(this).attr("data-attr");
+            $confirm("确定删除？", function () {
+                $.ajaxGetJson("@Url.Action("DbackDel", "Settings", new { Area = "ad_min" })", { fname: fname }, function (result) {
+                    var url = "databackup";
+                    delAlert(result.msg, url);
+                }
+                , function () { }
+                , function (XMLHttpRequest) {//beforeSend
+                    $(".dbackdel").attr("disabled", true);
+                });
+
+            })
+        });
+
+    });
+    </script>
+}

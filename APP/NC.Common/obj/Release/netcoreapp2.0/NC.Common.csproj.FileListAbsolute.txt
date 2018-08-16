@@ -1,0 +1,17 @@
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\bin\Release\netcoreapp2.0\NC.Common.deps.json
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\bin\Release\netcoreapp2.0\NC.Common.dll
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\bin\Release\netcoreapp2.0\NC.Common.pdb
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\obj\Release\netcoreapp2.0\NC.Common.csproj.CoreCompileInputs.cache
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\obj\Release\netcoreapp2.0\NC.Common.AssemblyInfoInputs.cache
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\obj\Release\netcoreapp2.0\NC.Common.AssemblyInfo.cs
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\obj\Release\netcoreapp2.0\NC.Common.dll
+G:\魏亚东2017\DEV\NETCOREMVC2.0\NETCORE.MVC\NC.Common\obj\Release\netcoreapp2.0\NC.Common.pdb
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\bin\Release\netcoreapp2.0\NC.Common.deps.json
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\bin\Release\netcoreapp2.0\NC.Common.dll
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\bin\Release\netcoreapp2.0\NC.Common.pdb
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\obj\Release\netcoreapp2.0\NC.Common.csproj.CoreCompileInputs.cache
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\obj\Release\netcoreapp2.0\NC.Common.AssemblyInfoInputs.cache
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\obj\Release\netcoreapp2.0\NC.Common.AssemblyInfo.cs
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\obj\Release\netcoreapp2.0\NC.Common.dll
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\obj\Release\netcoreapp2.0\NC.Common.pdb
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Common\obj\Release\netcoreapp2.0\NC.Common.csprojAssemblyReference.cache

@@ -1,0 +1,174 @@
+﻿@{
+    /*
+    *说明：菜单列表
+    *作者：wyd 2016-08-30
+    *修改：
+    *备注：/admin/manager/nav_list
+    */
+}
+@{
+    ViewBag.Title = "菜单列表";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Lib;
+<style type="text/css">
+.tree-list .col-1{ width:6%; text-align:center; }
+.tree-list .col-2{ width:14%; white-space:nowrap;word-break:break-all;overflow:hidden; }
+.tree-list .col-3{ width:46%; white-space:nowrap;word-break:break-all;overflow:hidden; }
+.tree-list .col-4{ width:6%; text-align:center; }
+.tree-list .col-5{ width:8%; text-align:center; }
+.tree-list .col-6{ width:8%; }
+.tree-list .col-7{ width:12%; text-align:center; }
+</style>
+
+<div class="main-content">
+    <div class="page-content">
+        <div class="page-header">
+            <div class="toolbar">
+                <div class="l-list">
+                    <ul class="icon-list">
+                        <li><a href="nav_edit?act=@JHEnums.ActionEnum.Add"><i class="fa fa-pencil-square-o"></i><span>新增</span></a></li>
+                        <li><a id="btnSave" class="save" href="javascript:;"><i class="fa fa-save"></i><span>保存</span></a></li>
+                        <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i class="fa fa-check-square-o"></i><span>全选</span></a></li>
+                        <li><a id="btnDelete" class="del" href="javascript:;"><i class="fa fa-trash"></i><span>删除</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.page-header -->
+        <!--列表-->
+        <div class="table-container">
+          <div class="tree-list">
+            <div class="thead">
+              <div class="col col-1">选择</div>
+              <div class="col col-2">调用名称</div>
+              <div class="col col-3">标题</div>
+              <div class="col col-4">显示</div>
+              <div class="col col-5">默认</div>
+              <div class="col col-6">排序</div>
+            </div>
+            <ul>
+              @foreach (DataRow dr in new AdminBase().GetNavList().Rows)
+              {
+              <li class="layer-@(dr["class_layer"])">
+                <div class="tbody">
+                    <div class="col col-1">
+                        <input name="chkId" type="checkbox" class="checkall" value="@dr["id"]" @(dr["is_sys"].ToString()=="0"?"Enabled='true'":"")/>
+                    </div>
+                    <div class="col col-2">
+                        @dr["name"]
+                    </div>
+                    <div class="col index col-3">
+                        <a href="nav_edit?act=@JHEnums.ActionEnum.Edit&id=@dr["id"]">@dr["title"]</a>
+                        (<a href="nav_edit?act=@JHEnums.ActionEnum.Add&id=@dr["id"]">添子级</a> <a href="nav_edit?act=@JHEnums.ActionEnum.Edit&id=@dr["id"]">修改</a>)
+                        @(dr["link_url"].ToString() == "" ? "" : @dr["link_url"].ToString())
+                    </div>
+                    <div class="col col-4">
+                        @(Utils.StrToInt(dr["is_lock"].ToString()) == 0 ? "√" : "×")
+                    </div>
+                    <div class="col col-5">
+                        @(Utils.StrToInt(dr["is_sys"].ToString()) == 0 ? "√" : "×")
+                    </div>
+                    <div class="col col-6">
+                        <input type="text" name="sort" value="@dr["sort_id"]" class="sort" data-attr="@dr["id"]"/>
+                    </div>
+                </div>
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+        <!--/列表-->
+    </div>
+</div>
+@section includeJs{
+    <script type="text/javascript">
+    $(function () {
+        //保存
+        $("#btnSave").click(function () {
+            var ids = inpAttr("sort", "data-attr");
+            var sorts = inpVal("sort");
+            @*
+            //不能在循环里面嵌ajax
+            var arrId = ids.split(',');
+            var arrSort = sort.split(',');
+            for (var i = 0; i < arrId.length; i++) {
+                if (arrSort[i]!="99") {
+                    $.ajaxGetJson("@Url.Action("UpdateSort_Nav", "Manager", new {Area="ad_min" })", { id: arrId[i], sort: arrSort[i] }, function (result) {
+                        if (result.status > 0) {
+                            $alert("保存成功！");
+                        } else {
+                            $alert("保存失败！");
+                        }
+                    });
+                }
+            }*@
+
+            $.ajaxGetJson("@Url.Action("UpdateSort_Nav", "Manager", new {Area="ad_min" })", { ids: ids, sorts: sorts }, function (result) {
+                if (result.status > 0) {
+                    $alert("保存成功！");
+                } else {
+                    $alert("保存失败！");
+                }
+                $("#btnSave").attr("disabled", false);
+            }
+            , function () { }
+            , function (XMLHttpRequest) {//beforeSend
+                $("#btnSave").attr("disabled", true);
+                $("#btnSave").css({ "color": "red" });
+            });
+
+        });
+
+        //删除
+        $("#btnDelete").click(function () {
+            var ids = chkVal("chkId");
+            $confirm("您确定要删除吗？", function () {
+                @*var arrId = ids.split(',');
+                for (var i = 0; i < arrId.length; i++) {
+                    $.ajaxGetJson("@Url.Action("DelNav", "Manager", new {Area="ad_min" })", { id: arrId[i] }, function (result) {
+                        if (result.status > 0) {
+                            $alert("删除成功！");
+                            var url = "Nav_List";
+                            self.location = url;
+                        } else {
+                            $alert("删除失败！");
+                        }
+                    });
+                }*@
+                $.ajaxGetJson("@Url.Action("DelNav", "Manager", new {Area="ad_min" })", { ids: ids }, function (result) {
+                    //if (result.status > 0) {
+                    //    $alert(result.message);
+                    //} else {
+                    //    $alert(result.message);
+                    //}
+                    var url = "Nav_List";
+                    delAlert(result.message, url);
+                }, function () {
+                        var url = "Nav_List";
+                        delAlert("删除失败或权限不够！", url);
+                }
+                , function (XMLHttpRequest) {//beforeSend
+                    $("#btnDelete").attr("disabled", true);
+                });
+
+            })
+        });
+
+        });
+
+    </script>
+    
+<script type="text/javascript">
+    $(function () {
+        //初始化分类的结构
+        initCategoryHtml('.tree-list', 1);
+        //初始化分类的事件
+        $('.tree-list').initCategoryTree(true);
+    });
+</script>
+
+
+}

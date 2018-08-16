@@ -1,0 +1,233 @@
+﻿@{
+    /*
+    *说明：部门管理
+    *作者：wyd 2016-09-06
+    *修改：
+    *备注：/admin/manager/dept_list
+    */
+}
+@{
+    ViewBag.Title = "部门管理";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+<div class="main-content">
+    <div class="page-content">
+
+        <div class="content_wrap">
+            <div class="zTreeDemoBackground left">
+                <div style="text-align:left;">
+                    <h3>部门管理</h3><i>（空白处右键可添加顶级部门）</i>
+                </div>
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+            <div class="right">
+                <iframe id="showFrame" src="@Url.Action("managers", "Manager",new { Area="ad_min"})" frameborder="0" width="100%" height="99.5%" scrolling="auto"></iframe>
+                @*<ul class="info">
+                        <li class="title">
+                            <h2>部门管理操作方法说明</h2>
+                            <ul class="list">
+                                <li>添加1级菜单，右键空白处增加节点</li>
+                                <li class="highlight_red">修改/删除/添加子类，鼠标移动到栏目上，点击右侧对应按钮即可</li>
+                            </ul>
+                        </li>
+                    </ul>*@
+            </div>
+        </div>
+        <div id="rMenu">
+            <ul>
+                <li id="m_add" onclick="addTreeNode();"><i class="fa fa-pencil-square-o"></i>新增</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+@section includeJs{
+    <link href="~/ad_min/js/zTree_v3/css/demo.css" rel="stylesheet" />
+    <link href="~/ad_min/js/zTree_v3/css/metroStyle/metroStyle.css" rel="stylesheet" />
+    <script src="~/ad_min/js/zTree_v3/js/jquery.ztree.core.js"></script>
+    <script src="~/ad_min/js/zTree_v3/js/jquery.ztree.exedit.js"></script>
+    <script type="text/javascript">
+		<!--
+		var setting = {
+		    view: {
+		        addHoverDom: addHoverDom,
+		        selectedMulti: false,
+		        removeHoverDom: removeHoverDom,
+
+				dblClickExpand: false
+			},
+			edit: {
+			    enable: true
+			},
+			data: {
+			    simpleData: {
+			        enable: true
+			    }
+			},
+			callback: {
+			    beforeDrag: beforeDrag,
+			    onRightClick: OnRightClick,
+			    onClick: zTreeOnClick,
+		        beforeRename: zTreeBeforeRename,
+		        onRename: zTreeOnRename,
+		        onRemove:zTreeOnRemove
+			}
+		};
+
+		var zNodes =@Html.Raw(ViewBag.initJson);
+
+		function beforeDrag(treeId, treeNodes) {
+		    return false;
+		}
+		function OnRightClick(event, treeId, treeNode) {
+			if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+				zTree.cancelSelectedNode();
+				showRMenu("root", event.clientX, event.clientY);
+			} else if (treeNode && !treeNode.noR) {
+				zTree.selectNode(treeNode);
+				showRMenu("node", event.clientX, event.clientY);
+			}
+		}
+
+		function addHoverDom(treeId, treeNode) {//增加按钮
+		    var sObj = $("#" + treeNode.tId + "_span");
+		    if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+		    var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+				+ "' title='add node' onfocus='this.blur();'></span>";
+		    sObj.after(addStr);
+		    var btn = $("#addBtn_" + treeNode.tId);
+		    if (btn) btn.bind("click", function () {
+		        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		        //先增后编辑
+		        nodes = zTree.getNodeByTId(treeNode.tId);
+			    treeNode = nodes;
+		        treeNode = zTree.addNodes(treeNode, { id: 0, pId: treeNode.id, name: "" });
+		        zTree.editName(treeNode[0]);
+		        return false;
+		    });
+		};
+		function removeHoverDom(treeId, treeNode) {//防止增加按钮重复出现
+		    $("#addBtn_" + treeNode.tId).unbind().remove();
+		};
+
+		function showRMenu(type, x, y) {
+			$("#rMenu ul").show();
+			if (type=="root") {
+				$("#m_del").hide();
+				$("#m_check").hide();
+				$("#m_unCheck").hide();
+			} else {
+				$("#m_del").show();
+				$("#m_check").show();
+				$("#m_unCheck").show();
+			}
+			rMenu.css({"top":y+"px", "left":x+"px", "visibility":"visible"});
+
+			$("body").bind("mousedown", onBodyMouseDown);
+		}
+		function hideRMenu() {//隐藏右键菜单
+			if (rMenu) rMenu.css({"visibility": "hidden"});
+			$("body").unbind("mousedown", onBodyMouseDown);
+		}
+		function onBodyMouseDown(event){
+			if (!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length>0)) {
+				rMenu.css({"visibility" : "hidden"});
+			}
+		}
+		var addCount = 1;
+		function addTreeNode() {//右键新增
+		    hideRMenu();
+
+		    var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		    var treeNode = zTree.getSelectedNodes()[0];
+		    var newNode = {id:0,pId:0, name:""};
+		    if (treeNode) {
+		        newNode= {id:0,pId:treeNode.id, name:""};
+		        treeNode = zTree.addNodes(treeNode, newNode);
+		    }else {
+		        treeNode = zTree.addNodes(null, newNode);
+		    }
+			zTree.editName(treeNode[0]);
+		}
+
+		//点击事件
+		function zTreeOnClick(event, treeId, treeNode) {
+		    //alert(treeNode.id + ", " + treeNode.name);
+		    //为Frame赋值链接到列表组件
+		    var src = "@Url.Action("managers", "Manager")?dept_id=" + treeNode.id;
+		    $("#showFrame").attr("src", src);
+		};
+		//更新节点名称数据之前的事件回调函数
+		function zTreeBeforeRename(treeId, treeNode, newName, isCancel) {
+		    ////禁止修改的名称的长度小于 5
+		    ////return newName.length > 5;
+		    return true;
+		}
+		//更新节点
+		function zTreeOnRename(event, treeId, treeNode, isCancel) {
+		    //alert(treeNode.id+","+treeNode.pId + ", " + treeNode.name);
+		    //return false;
+		    //ajax更新
+		    $.ajax({
+		        url: '@Url.Action("Dept_Save", "Manager")',
+		        type: "post",
+		        dataType: "json",
+		        data: "id="+treeNode.id+"&pId="+treeNode.pId+"&name="+treeNode.name,
+		        success: function (result) {
+		            //更新成功
+		            $alert(result.msg);
+		            if (result.add==0) {//如果新增，刷新页面，防止新增一个再新增一个子类
+		                location.href="dept_manager";
+		            }
+		        }
+		    });
+		}
+		//删除
+    function zTreeOnRemove(event, treeId, treeNode) {
+            //alert(treeNode.id+","+treeNode.pId + ", " + treeNode.name);
+		    $.ajax({
+		        url: '@Url.Action("Dept_Del", "Manager")',
+		        type: "post",
+		        dataType: "json",
+		        data:"id="+ treeNode.id,
+		        success: function (result) {
+		            $alert(result.msg);
+		        }
+		    });
+		}
+
+		var zTree, rMenu;
+		$(document).ready(function(){
+		    var treeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		    treeObj.expandAll(true);//打开所有
+		    //var treenode = treeObj.getNodeByParam("id", 1);//打开指定，并选中默认
+		    //treeObj.expandNode(treenode, true, true, true);
+		    //treeObj.selectNode(treenode);
+
+			zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			rMenu = $("#rMenu");
+		});
+		//-->
+    </script>
+    <style type="text/css">
+        div#rMenu {
+            position: absolute;
+            visibility: hidden;
+            top: 0;
+            background-color: #555;
+            text-align: left;
+            padding: 2px;
+        }
+
+            div#rMenu ul li {
+                margin: 1px 0;
+                padding: 0 5px;
+                cursor: pointer;
+                list-style: none outside none;
+                background-color: #ffffff;
+            }
+    </style>
+}

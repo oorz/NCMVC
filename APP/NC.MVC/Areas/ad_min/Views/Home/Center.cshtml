@@ -1,0 +1,137 @@
+﻿@{
+    /*
+    *说明：管理首页
+    *作者：wyd 2018-03-19
+    *修改：
+    *备注：
+    */
+    @using System.Data;
+    @using NC.Common;
+    @using NC.Core;
+}
+@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper wrapper-content">
+    <div class="col-sm-12">
+        <blockquote class="text-info" style="font-size:14px">
+            <h3 class="text-danger">WUI通用管理系统快速开发框架</h3>
+            <br>WUI 是一个基于最新 Web 技术的企业级通用管理系统快速开发框架，可以帮助企业极大的提高工作效率，节省开发成本，提升品牌形象。
+            <br>您可以 WUI 为基础，快速开发各种MIS系统，如CMS、OA、CRM、ERP、POS等。
+            <br>WUI 紧贴业务特性，涵盖了大量的常用组件和基础功能，最大程度上帮助企业节省时间成本和费用开支。
+        </blockquote>
+
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>二次开发</h5>
+                </div>
+                <div class="ibox-content">
+                    <p>我们提供基于WUI的二次后端开发服务，具体费用请联系作者。</p>
+                    <p>同时，我们也提供以下服务：</p>
+                    <ol>
+                        <li>网站建设</li>
+                        <li>软件开发</li>
+                        <li>技术指导</li>
+                        <li>后端服务</li>
+                        <li>手机端/微信/小程序开发</li>
+                        <li>
+                            <p>
+                                <i class="fa fa-weixin"></i> 微信公众号：<a href="javascript:;">专卓</a>
+                                <img width="168" height="168" src="~/ad_min/skin/default/wechat.jpg" alt="不打赏，再不关注一下公众号，那就有点说不过去了(●'◡'●)ノ♥~~~">
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>联系信息</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <p>
+                        <i class="fa fa-send-o"></i> 博客：<a href="https://www.cnblogs.com/oorz/" target="_blank">https://www.cnblogs.com/oorz/</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-qq"></i> QQ群：<a href="https://jq.qq.com/?_wv=1027&k=5dsNTzp" target="_blank">444036561</a>
+                        <img src="~/ad_min/skin/default/qq.png" alt="(●'◡'●)ノ♥~~~">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>全部开源</h5>
+                </div>
+                <div class="ibox-content">
+                    <ol>
+                        <li>所有源码(未压缩、带注释)；终身免费</li>
+                        <li>
+                            基于Bootstrap 3.3.6响应式布局PC、平板、手机等；流行扁平化方式布局......
+                        </li>
+                        <li>框架后台交互NCMVC；NCMVC基于Asp.Net Core 2.0跨平台开发，源码即将开源发布敬请关注公众号加入qq群。</li>
+                        <li>
+                            <p>
+                                分享不易，微信小小打赏。
+                                <img width="240" height="240" src="~/ad_min/skin/default/wechat_pay.jpg" alt="打赏困难，请关注公众号支持一下(●'◡'●)ノ♥~~~">
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-content">
+    <div class="nlist1">
+        <ul>
+            <li>本次登录IP：@ViewData["strIp"].ToString()</li>
+            <li>上次登录IP：@ViewData["BackIp"]</li>
+            <li>上次登录时间：@Utils.StrToDateTime(ViewData["BackTime"].ToString()).ToString("yyyy-MM-dd mm:ss")</li>
+        </ul>
+    </div>
+    <div class="space-10"></div>
+    <div class="nlist2 clearfix">
+        <h2>站点信息</h2>
+        <ul>
+            <li>站点名称：@ViewBag.setConf.webname</li>
+            <li>公司名称：@ViewBag.setConf.webcompany</li>
+            <li>网站域名：@ViewBag.setConf.weburl</li>
+            <li>安装目录：@ViewBag.setConf.webpath</li>
+            <li>网站管理目录：@ViewBag.setConf.webmanagepath</li>
+            <li>附件上传目录：@ViewBag.setConf.filepath</li>
+            @*<li>服务器名称：@Server.MachineName </li>
+                <li>服务器IP：@Request.ServerVariables["LOCAL_ADDR"]</li>*@
+            <li>NET框架版本：@Environment.Version.ToString()</li>
+            <li>操作系统：@Environment.OSVersion.ToString()</li>
+            @*<li>IIS环境：@Request.ServerVariables["SERVER_SOFTWARE"]</li>
+                <li>服务器端口：@Request.ServerVariables["SERVER_PORT"]</li>
+                <li>目录物理路径：@Request.ServerVariables["APPL_PHYSICAL_PATH"]</li>*@
+            <li>系统版本：V@(Utils.GetVersion())</li>
+        </ul>
+        <div class="space-10"></div>
+    </div>
+</div><!-- /.page-content -->
+
+@section includeJs{
+
+    <!-- 欢迎信息 -->
+    <script src="~/ad_min/js/welcome.js"></script>
+
+    <script>
+    var tempData = '@(TempData["Permission"])';//弹出没有权限提示
+    if (tempData!="") {
+        $alert(tempData);
+    }
+    </script>
+}

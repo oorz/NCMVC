@@ -1,0 +1,11 @@
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\bin\Release\netcoreapp2.0\NC.Model.deps.json
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\bin\Release\netcoreapp2.0\NC.Model.dll
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\bin\Release\netcoreapp2.0\NC.Model.pdb
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\obj\Release\netcoreapp2.0\NC.Model.csproj.CoreCompileInputs.cache
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\obj\Release\netcoreapp2.0\NC.Model.AssemblyInfoInputs.cache
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\obj\Release\netcoreapp2.0\NC.Model.AssemblyInfo.cs
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\obj\Release\netcoreapp2.0\NC.Model.dll
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\obj\Release\netcoreapp2.0\NC.Model.pdb
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\bin\Release\netcoreapp2.0\NC.Model.runtimeconfig.json
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\bin\Release\netcoreapp2.0\NC.Model.runtimeconfig.dev.json
+G:\魏亚东2018\DEV\NETCORE.MVC2.0\NC.Model\obj\Release\netcoreapp2.0\NC.Model.csprojAssemblyReference.cache

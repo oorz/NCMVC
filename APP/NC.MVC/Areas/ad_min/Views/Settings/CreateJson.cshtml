@@ -1,0 +1,125 @@
+﻿@{
+    /*
+    *说明：生成JSON数据
+    *作者：wyd 2016-12-16
+    *修改：
+    *备注：/admin/manager/createjson
+    */
+}
+@{
+    ViewBag.Title = "生成JSON数据";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model.Models;
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-9">
+            @using (Html.BeginForm("CreateJsonSave", "Settings", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+            {
+                <div class="tab-content">
+                    <dl>
+                        <dt>SQL 语句：</dt>
+                        <dd>
+                            <textarea name="txtSql" class="input normal" rows="2" cols="20" id="txtSql" style="height:48px;width:636px;"></textarea>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>DSN 名称：</dt>
+                        <dd><input name="txtDsn" class="input normal" type="text" value="NC" id="txtDsn" style="width:106px;" /></dd>
+                    </dl>
+                    <dl>
+                        <dt>JSON 名称：</dt>
+                        <dd><input name="txtName" class="input normal" type="text" id="txtName" /></dd>
+                    </dl>
+                    <dl>
+                        <dt>生成结果：</dt>
+                        <dd>
+                            <textarea name="txtJSON" class="input normal" rows="2" cols="20" id="txtJSON" style="height: 286px; width: 636px;"></textarea>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                            <button class="btn btn-info" type="submit" id="btnSubmit">
+                                <i class="fa fa-check bigger-110"></i>
+                                生成JSON数据
+                            </button>
+                            <button class="btn btn-danger" type="button" id="btnCate" style="display:none;">
+                                <i class="fa fa-check bigger-110"></i>
+                                生成分类JSON
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="button" onclick="javascript:history.back(-1);">
+                                <i class="fa fa-reply bigger-110"></i>
+                                返回上一页
+                            </button>
+                            <div id="msgtips"></div>
+                        </dd>
+                    </dl>
+                </div>
+
+
+            }
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+@section includeJs{
+    <script type="text/javascript">
+    $(function () {
+        //form提交,生成JSON
+        $saveForm =function () {
+            $.ajaxPostJson("@Url.Action("CreateJsonSave", "Settings", new { Area = "ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $("#txtJSON").html(result.msg);
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                } else {
+                    $alert("生成失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("生成异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在生成，请稍候...");
+            });
+            return false;
+        };
+        //初始化表单验证
+        $("#mainForm").initValidform1($saveForm);
+        //form提交,生成JSON
+        $("#btnCate").click(function () {
+            $.ajaxPostJson("@Url.Action("CreateCateJsonSave", "Settings", new { Area = "ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $("#txtJSON").html(result.msg);
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                } else {
+                    $alert("生成失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("生成异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在生成，请稍候...");
+            });
+
+        });
+    });
+    </script>
+}

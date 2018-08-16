@@ -1,0 +1,553 @@
+﻿@{
+    /*
+    *说明：系统参数设置
+    *作者：wyd 2016-12-01
+    *修改：
+    *备注：/admin/manager/Sys_Config
+    */
+}
+@{
+    ViewBag.Title = "系统参数设置";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model;
+@model siteconfig
+<style>
+    .content-nav > li a, .content-nav > li.active > a, .content-nav > li.active > a:focus, .content-nav > li a:hover {
+        color: #676a6c;
+        border-bottom-color: #e7eaec;
+    }
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+    <div class="col-xs-9">
+        @using (Html.BeginForm("SysConfigSave", "Settings", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+        {
+
+        <div class="tabs-container">
+            <ul class="nav nav-tabs content-nav">
+                <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"> 网站基本信息</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">功能权限设置</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false">短信平台设置</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false">邮件发送设置</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-5" aria-expanded="false">文件上传设置</a></li>
+            </ul>
+            <!--网站基本信息-->
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body">
+                        <dl style="display: none;">
+                            <dt>Email邮件发送</dt>
+                            <dd>
+                                <div class="rule-multi-radio">
+                                    <span id="rblEmail"><input id="rblEmail_0" type="radio" name="rblEmail" value="0" @(Model.IsEmail == 0 ? "checked" : "") /><label for="rblEmail_0">是</label><input id="rblEmail_1" type="radio" name="rblEmail" value="1" @(Model.IsEmail == 1 ? "checked" : "") /><label for="rblEmail_1">否</label></span>>
+                                </div>
+                                <span class="Validform_checktip">*选否后都将收不到Email,WEB端及后台config都要改，后期考虑放数据库中</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站名称</dt>
+                            <dd>
+                                <input name="webname" type="text" value="@Model.webname" id="webname" class="input normal" datatype="*2-255" sucmsg=" " />
+                                <span class="Validform_checktip">*任意字符，控制在255个字符内</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站域名</dt>
+                            <dd>
+                                <input name="weburl" type="text" value="@Model.weburl" id="weburl" class="input normal" datatype="url" sucmsg=" " />
+                                <span class="Validform_checktip">*以“http://”开头，不能绑定到频道分类</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站LOGO</dt>
+                            <dd>
+                                <input name="weblogo" type="text" id="weblogo" class="input normal upload-path" value="@Model.weblogo" />
+                                <div class="upload-box upload-img"></div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>公司名称</dt>
+                            <dd>
+                                <input name="webcompany" type="text" value="@Model.webcompany" id="webcompany" class="input normal" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>通讯地址</dt>
+                            <dd>
+                                <input name="webaddress" type="text" value="@Model.webaddress" id="webaddress" class="input normal" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>联系电话</dt>
+                            <dd>
+                                <input name="webtel" type="text" id="webtel" class="input normal" value="@Model.webtel" />
+                                <span class="Validform_checktip">*非必填，区号+电话号码</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>传真号码</dt>
+                            <dd>
+                                <input name="webfax" type="text" value="@Model.webfax" id="webfax" class="input normal" />
+                                <span class="Validform_checktip">*非必填，区号+传真号码</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>管理员邮箱</dt>
+                            <dd>
+                                <input name="webmail" type="text" value="@Model.webmail" id="webmail" class="input normal" />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站备案号</dt>
+                            <dd>
+                                <input name="webcrod" type="text" value="@Model.webcrod" id="webcrod" class="input normal" />
+                            </dd>
+                        </dl>
+                        <dl style="display:none;">
+                            <dt>首页标题(SEO)</dt>
+                            <dd>
+                                <input name="webtitle" type="text" value="@Model.webtitle" id="webtitle" class="input normal" />
+                                <span class="Validform_checktip">*自定义的首页标题</span>
+                            </dd>
+                        </dl>
+                        <dl style="display:none;">
+                            <dt>页面关健词(SEO)</dt>
+                            <dd>
+                                <input name="webkeyword" type="text" value="@Model.webkeyword" id="webkeyword" class="input normal" />
+                                <span class="Validform_checktip">页面关键词(keyword)</span>
+                            </dd>
+                        </dl>
+                        <dl style="display:none;">
+                            <dt>页面描述(SEO)</dt>
+                            <dd>
+                                <input name="webdescription" type="text" value="@Model.webdescription" id="webdescription" class="input normal" />
+                                <span class="Validform_checktip">页面描述(description)</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站版权信息</dt>
+                            <dd>
+                                <textarea name="webcopyright" rows="2" cols="20" id="webcopyright" class="input normal">@Model.webcopyright</textarea>
+                                <span class="Validform_checktip">支持HTML</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <!--/网站基本信息-->
+                <!--功能权限设置-->
+                <div id="tab-2" class="tab-pane">
+                    <div class="panel-body">
+                        <dl>
+                            <dt>网站安装目录</dt>
+                            <dd>
+                                <input name="webpath" type="text" value="@Model.webpath" id="webpath" class="input normal" datatype="*1-100" sucmsg=" " />
+                                <span class="Validform_checktip">*根目录输入“/”，其它输入“/目录名/”</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>后台管理目录</dt>
+                            <dd>
+                                <input name="webmanagepath" type="text" value="@Model.webmanagepath" id="webmanagepath" class="input normal" datatype="*1-100" sucmsg=" " />
+                                <span class="Validform_checktip">*默认admin，其它请输入目录名，否则无法进入后台</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>URL重写开关</dt>
+                            <dd>
+                                <label>
+                                    <input id="staticstatus_0" class="ace" type="radio" name="staticstatus" value="0" @(Model.staticstatus == 0 ? "checked" : "") /><span class="lbl">关闭</span>
+                                    <input id="staticstatus_1" class="ace" type="radio" name="staticstatus" value="1" @(Model.staticstatus == 1 ? "checked" : "") /><span class="lbl">伪URL重写</span>
+                                    <input id="staticstatus_2" class="ace" type="radio" name="staticstatus" value="2" @(Model.staticstatus == 2 ? "checked" : "") /><span class="lbl">生成静态</span>
+                                </label>
+                                <span class="Validform_checktip">*URL配置规则，点击这里查看说明</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>静态URL后缀</dt>
+                            <dd>
+                                <input name="staticextension" type="text" value="@Model.staticextension" id="staticextension" class="input t120" datatype="*1-100" sucmsg=" " />
+                                <span class="Validform_checktip">*扩展名，不包括“.”，访问或生成时将会替换此值，如：aspx、html</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>开启会员功能</dt>
+                            <dd>
+                                <div class="checkbox m-l m-r-xs">
+                                    <label class="i-checks">
+                                        <input type="checkbox" name="memberstatus" @(Model.memberstatus == 1 ? "checked" : "")>
+                                    </label>
+                                </div>
+                                <span class="Validform_checktip">*关闭后关联会员的内容将失效</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>开启评论审核</dt>
+                            <dd>
+                                <label>
+                                    <input name="commentstatus" class="ace " type="checkbox" @(Model.commentstatus == 1 ? "checked" : "")>
+                                    <span class="lbl"></span>
+                                </label>
+                                <span class="Validform_checktip">*开启后评论将会审核才显示</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>开启管理日志</dt>
+                            <dd>
+                                <label>
+                                    <input id="logstatus" class="ace " type="checkbox" name="logstatus" @(Model.logstatus == 1 ? "checked" : "") />
+                                    <span class="lbl"></span>
+                                </label>
+                                <span class="Validform_checktip">*开启后将会记录管理员在后台的操作日志</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>是否开启网站</dt>
+                            <dd>
+                                <label>
+                                    <input id="webstatus" class="ace " type="checkbox" name="webstatus" @(Model.webstatus == 1 ? "checked" : "") />
+                                    <span class="lbl"></span>
+                                </label>
+                                <span class="Validform_checktip">*关闭后网站前台将不能访问</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站关闭原因</dt>
+                            <dd>
+                                <textarea name="webclosereason" rows="2" cols="20" id="webclosereason" class="input normal">@Model.webclosereason</textarea>
+                                <span class="Validform_checktip">支持HTML</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>网站统计代码</dt>
+                            <dd>
+                                <textarea name="webcountcode" rows="2" cols="20" id="webcountcode" class="input normal">@Model.webcountcode</textarea>
+                                <span class="Validform_checktip">支持HTML</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                    <!--/功能权限设置-->
+                    <!--手机短信设置-->
+                <div id="tab-3" class="tab-pane">
+                    <div class="panel-body">
+                        <dl>
+                            <dt>短信剩余数量</dt>
+                            <dd>
+                                <span id="labSmsCount">错误代码：</span>
+                                <span class="Validform_checktip">尚未申请？<a href="#" target="_blank">请点击这里注册</a></span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>平台登录账户</dt>
+                            <dd>
+                                <input name="smsusername" type="text" value="@Model.smsusername" id="smsusername" class="input normal" />
+                                <span class="Validform_checktip">*短信平台注册的用户名</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>平台登录密码</dt>
+                            <dd>
+                                <input name="smspassword" type="password" id="smspassword" class="input normal" value="0|0|0|0" />
+                                <span class="Validform_checktip">*短信平台注册的密码</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>短信平台说明</dt>
+                            <dd>
+                                请在短信平台修改账户资料中绑定签名方可使用短信功能；<br />
+                                如果您尚未申请开通，<a href="#" target="_blank">请点击这里注册</a>成功后填写您的用户名和密码均可正常使用。
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                        <!--/手机短信设置-->
+                        <!--邮件发送设置-->
+                <div id="tab-4" class="tab-pane">
+                    <div class="panel-body">
+                        <dl>
+                            <dt>SMTP服务器</dt>
+                            <dd>
+                                <input name="emailsmtp" type="text" value="@Model.emailsmtp" id="emailsmtp" class="input normal" datatype="*0-100" sucmsg=" " />
+                                <span class="Validform_checktip">*发送邮件的SMTP服务器地址</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>SMTP端口</dt>
+                            <dd>
+                                <input name="emailport" type="text" value="@Model.emailport" id="emailport" class="input t120" datatype="n" sucmsg=" " />
+                                <span class="Validform_checktip">*SMTP服务器的端口，大部分服务商都支持25端口</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>发件人地址</dt>
+                            <dd>
+                                <input name="emailfrom" type="text" value="@Model.emailfrom" id="emailfrom" class="input normal" datatype="e" sucmsg=" " />
+                                <span class="Validform_checktip">*发件人的邮箱地址</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>邮箱账号</dt>
+                            <dd>
+                                <input name="emailusername" type="text" value="@Model.emailusername" id="emailusername" class="input normal" datatype="*0-100" sucmsg=" " />
+                                <span class="Validform_checktip">*</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>邮箱密码</dt>
+                            <dd>
+                                <input name="emailpassword" type="password" id="emailpassword" class="input normal" datatype="*0-100" sucmsg=" " value="0|0|0|0" />
+                                <span class="Validform_checktip">*</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>发件人昵称</dt>
+                            <dd>
+                                <input name="emailnickname" type="text" value="@Model.emailnickname" id="emailnickname" class="input normal" datatype="*0-50" sucmsg=" " />
+                                <span class="Validform_checktip">*对方收到邮件时显示的昵称</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <!--/邮件发送设置-->
+                            <!--上传配置-->
+                <div id="tab-5" class="tab-pane">
+                    <div class="panel-body">
+                        <dl>
+                            <dt>文件上传目录</dt>
+                            <dd>
+                                <input name="filepath" type="text" value="@Model.filepath" id="filepath" class="input normal" datatype="*2-100" sucmsg=" " />
+                                <span class="Validform_checktip">*文件保存的目录名，自动创建根目录下</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>文件保存方式</dt>
+                            <dd>
+                                <div class="rule-single-select">
+                                    <select name="filesave" id="filesave" datatype="*" sucmsg=" ">
+                                        <option @(Model.filesave == 1 ? "selected" : "") value="1">按年月日每天一个目录</option>
+                                        <option @(Model.filesave == 2 ? "selected" : "") value="2">按年月每月一个目录</option>
+                                        <option @(Model.filesave == 3 ? "selected" : "") value="3">按年每年一个目录</option>
+                                        <option @(Model.filesave == 4 ? "selected" : "") value="4">按年/月/日/存入不同目录</option>
+                                        <option @(Model.filesave == 5 ? "selected" : "") value="5">按年月/日/存入不同目录</option>
+                                        <option @(Model.filesave == 6 ? "selected" : "") value="6">按年/月/存入不同目录</option>
+
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>文件上传类型</dt>
+                            <dd>
+                                <input name="fileextension" type="text" value="@Model.fileextension" id="fileextension" class="input normal" datatype="*1-255" sucmsg=" " />
+                                <span class="Validform_checktip">*以英文的逗号分隔开，如：“zip,rar”</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>附件上传大小</dt>
+                            <dd>
+                                <input name="attachsize" type="text" value="@Model.attachsize" id="attachsize" class="input t120" datatype="n" sucmsg=" " />
+                                KB
+                                <span class="Validform_checktip">*超过设定的文件大小不予上传，0不限制</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>图片上传大小</dt>
+                            <dd>
+                                <input name="imgsize" type="text" value="@Model.imgsize" id="imgsize" class="input t120" datatype="n" sucmsg=" " />
+                                KB
+                                <span class="Validform_checktip">*超过设定的图片大小不予上传，0不限制</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>图片最大尺寸</dt>
+                            <dd>
+                                <input name="imgmaxheight" type="text" value="@Model.imgmaxheight" id="imgmaxheight" class="input t120" datatype="n" sucmsg=" " />
+                                ×
+                                <input name="imgmaxwidth" type="text" value="@Model.imgmaxwidth" id="imgmaxwidth" class="input t120" datatype="n" sucmsg=" " />
+                                px
+                                <span class="Validform_checktip">*左边高度，右边宽度，超出自动裁剪，0为不受限制</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>生成缩略尺寸</dt>
+                            <dd>
+                                <input name="thumbnailheight" type="text" value="@Model.thumbnailheight" id="thumbnailheight" class="input t120" datatype="n" sucmsg=" " />
+                                ×
+                                <input name="thumbnailwidth" type="text" value="@Model.thumbnailwidth" id="thumbnailwidth" class="input t120" datatype="n" sucmsg=" " />
+                                px
+                                <span class="Validform_checktip">*左边高度，右边宽度，0为不生成缩略图</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>图片水印类型</dt>
+                            <dd>
+                                <input id="watermarktype_0" class="ace" type="radio" name="watermarktype" value="0" @(Model.watermarktype == 0 ? "checked" : "") /><span class="lbl">关闭水印</span>
+                                <input id="watermarktype_1" class="ace" type="radio" name="watermarktype" value="1" @(Model.watermarktype == 1 ? "checked" : "") /><span class="lbl">文字水印</span>
+                                <input id="watermarktype_2" class="ace" type="radio" name="watermarktype" value="2" @(Model.watermarktype == 2 ? "checked" : "") /><span class="lbl">图片水印</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>图片水印位置</dt>
+                            <dd>
+                                <input id="watermarkposition_0" class="ace" type="radio" name="watermarkposition" value="1" @(Model.watermarkposition == 1 ? "checked" : "") /><span class="lbl">左上</span>
+                                <input id="watermarkposition_1" class="ace" type="radio" name="watermarkposition" value="2" @(Model.watermarkposition == 2 ? "checked" : "") /><span class="lbl">中上</span>
+                                <input id="watermarkposition_2" class="ace" type="radio" name="watermarkposition" value="3" @(Model.watermarkposition == 3 ? "checked" : "") /><span class="lbl">右上</span>
+                                <input id="watermarkposition_3" class="ace" type="radio" name="watermarkposition" value="4" @(Model.watermarkposition == 4 ? "checked" : "") /><span class="lbl">左中</span>
+                                <input id="watermarkposition_4" class="ace" type="radio" name="watermarkposition" value="5" @(Model.watermarkposition == 5 ? "checked" : "") /><span class="lbl">居中</span>
+                                <input id="watermarkposition_5" class="ace" type="radio" name="watermarkposition" value="6" @(Model.watermarkposition == 6 ? "checked" : "") /><span class="lbl">右中</span>
+                                <input id="watermarkposition_6" class="ace" type="radio" name="watermarkposition" value="7" @(Model.watermarkposition == 7 ? "checked" : "") /><span class="lbl">左下</span>
+                                <input id="watermarkposition_7" class="ace" type="radio" name="watermarkposition" value="8" @(Model.watermarkposition == 8 ? "checked" : "") /><span class="lbl">中下</span>
+                                <input id="watermarkposition_8" class="ace" type="radio" name="watermarkposition" value="9" @(Model.watermarkposition == 9 ? "checked" : "") /><span class="lbl">右下</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>图片生成质量</dt>
+                            <dd>
+                                <input name="watermarkimgquality" type="text" value="@Model.watermarkimgquality" id="watermarkimgquality" class="input t120" datatype="n" sucmsg=" " />
+                                <span class="Validform_checktip">*只适用于加水印的jpeg格式图片.取值范围 0-100, 0质量最低, 100质量最高, 默认80</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>图片水印文件</dt>
+                            <dd>
+                                <input name="watermarkpic" type="text" value="@Model.watermarkpic" id="watermarkpic" class="input normal" datatype="s2-100" sucmsg=" " />
+                                <span class="Validform_checktip">*需存放在站点目录下，如图片不存在将使用文字水印</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>水印透明度</dt>
+                            <dd>
+                                <input name="watermarktransparency" type="text" value="@Model.watermarktransparency" id="watermarktransparency" class="input t120" datatype="n" sucmsg=" " />
+                                <span class="Validform_checktip">*取值范围1--10 (10为不透明)</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>水印文字</dt>
+                            <dd>
+                                <input name="watermarktext" type="text" value="@Model.watermarktext" id="watermarktext" class="input normal" datatype="s2-100" sucmsg=" " />
+                                <span class="Validform_checktip">*文字水印的内容</span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>文字字体</dt>
+                            <dd>
+                                <div class="rule-single-select">
+                                    <select name="watermarkfont" id="watermarkfont">
+                                        <option value="Arial">Arial</option>
+                                        <option value="Arial Black">Arial Black</option>
+                                        <option value="Batang">Batang</option>
+                                        <option value="BatangChe">BatangChe</option>
+                                        <option value="Comic Sans MS">Comic Sans MS</option>
+                                        <option value="Courier New">Courier New</option>
+                                        <option value="Dotum">Dotum</option>
+                                        <option value="DotumChe">DotumChe</option>
+                                        <option value="Estrangelo Edessa">Estrangelo Edessa</option>
+                                        <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                                        <option value="Gautami">Gautami</option>
+                                        <option value="Georgia">Georgia</option>
+                                        <option value="Gulim">Gulim</option>
+                                        <option value="GulimChe">GulimChe</option>
+                                        <option value="Gungsuh">Gungsuh</option>
+                                        <option value="GungsuhChe">GungsuhChe</option>
+                                        <option value="Impact">Impact</option>
+                                        <option value="Latha">Latha</option>
+                                        <option value="Lucida Console">Lucida Console</option>
+                                        <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                                        <option value="Mangal">Mangal</option>
+                                        <option value="Marlett">Marlett</option>
+                                        <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
+                                        <option value="MingLiU">MingLiU</option>
+                                        <option value="MS Gothic">MS Gothic</option>
+                                        <option value="MS Mincho">MS Mincho</option>
+                                        <option value="MS PGothic">MS PGothic</option>
+                                        <option value="MS PMincho">MS PMincho</option>
+                                        <option value="MS UI Gothic">MS UI Gothic</option>
+                                        <option value="MV Boli">MV Boli</option>
+                                        <option value="Palatino Linotype">Palatino Linotype</option>
+                                        <option value="PMingLiU">PMingLiU</option>
+                                        <option value="Raavi">Raavi</option>
+                                        <option value="Shruti">Shruti</option>
+                                        <option value="Sylfaen">Sylfaen</option>
+                                        <option value="Symbol">Symbol</option>
+                                        <option value="Tahoma">Tahoma</option>
+                                        <option value="Times New Roman">Times New Roman</option>
+                                        <option value="Trebuchet MS">Trebuchet MS</option>
+                                        <option value="Tunga">Tunga</option>
+                                        <option value="Verdana">Verdana</option>
+                                        <option value="Webdings">Webdings</option>
+                                        <option value="Wingdings">Wingdings</option>
+                                        <option value="仿宋_GB2312">仿宋_GB2312</option>
+                                        <option selected="selected" value="宋体">宋体</option>
+                                        <option value="新宋体">新宋体</option>
+                                        <option value="楷体_GB2312">楷体_GB2312</option>
+                                        <option value="黑体">黑体</option>
+                                    </select>
+                                </div>
+                                <input name="watermarkfontsize" type="text" value="@Model.watermarkfontsize" id="watermarkfontsize" class="input t120" datatype="n" sucmsg=" " />
+                                px
+                                <span class="Validform_checktip">*文字水印的字体和大小 </span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                                <!--/上传配置-->
+                            </div><!--.tab-content-->
+                            <div class="space-4"></div>
+                            <div class="col-md-offset-3 col-md-9">
+                                <button class="btn btn-info" type="submit" id="btnSubmit">
+                                    <i class="fa fa-check bigger-110"></i>
+                                    提交保存
+                                </button>
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="button" onclick="javascript:history.back(-1);">
+                                    <i class="fa fa-reply bigger-110"></i>
+                                    返回上一页
+                                </button>
+                                <div id="msgtips"></div>
+                            </div>
+                        </div><!-- /.tabs-container -->
+                        }
+                    </div><!-- /.col -->
+    </div><!-- /.row -->
+</div>
+@section includeJs{
+    <script type="text/javascript">
+        $saveForm=function () {
+            //alert($("#mainForm").serialize());
+            //return false;
+            $.ajaxPostJson("@Url.Action("SysConfigSave", "Settings", new { Area = "ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $confirm("保存成功，是否继续添加！", function () {
+                        $("#btnSubmit").attr("disabled", false);
+                        $("#msgtips").hide();
+                    }, function () {
+                        var url = "Sys_Config";
+                        self.location = url;
+                    });
+                } else {
+                    $alert("保存失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("保存异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在保存，请稍候...");
+                });
+            return false;
+        };
+    $(function () {
+        //初始化表单验证
+        $("#mainForm").initValidform1($saveForm);
+    });
+    </script>
+}

@@ -1,0 +1,196 @@
+﻿@{
+    /*
+    *说明：权限编辑
+    *作者：wyd 2016-12-01
+    *修改：
+    *备注：/admin/manager/role_edit
+    */
+}
+@{
+    ViewBag.Title = "菜单编辑";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model.Models;
+@using NC.MVC.Areas.ad_min.Controllers
+@model NcManagerRole
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-9">
+            @using (Html.BeginForm("RoleSave", "Manager", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+            {
+                <input type="hidden" name="act" value="@ViewBag.action" />
+                <input type="hidden" name="id" value="@ViewBag.id" />
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtName">角色类型</label>
+                    <div class="col-sm-9">
+                        <select name="role_type" id="role_type">
+                            @*<option value="1" @(Model.role_type==1?"selected":"")>超级用户</option>*@
+                            <option value="2" @(Model.RoleType == 2 ? "selected" : "")>系统用户</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">角色名称</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.RoleName, new { id = "role_name", @class = "input normal", datatype = "*1-100", sucmsg = " " })
+                        <span class="Validform_checktip">*角色名称不能为空！</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="cblActionType">管理权限</label>
+                    <div class="col-sm-9">
+                        <table class="table table-striped table-bordered table-hover ltable" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th width="30%">导航名称</th>
+                                    <th width="12%" align="center"><label class="checkall"><input name="chkAll" type="checkbox" class="ace"><span class="lbl">全选</span></label></th>
+                                    <th>权限分配</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    string result = string.Empty;
+                                    string LitStyle = "<span style=\"display:inline-block;width:{0}px;\"></span>{1}{2}";
+                                    string LitImg1 = "<span class=\"fa fa-folder\"></span>";
+                                    string LitImg2 = "<span class=\"folder-line\"></span>";
+                                    int i = 0;
+                                }
+                                @foreach (DataRow dr in ViewBag.DtRoleNav.Rows)
+                                {
+                                    <tr>
+                                        <td style="white-space:nowrap;word-break:break-all;overflow:hidden;">
+                                            <input type="hidden" id="hidName" name="hidName" value="@dr["name"]" />
+                                            <input type="hidden" id="hidActionType" name="hidActionType" value="@(new ManagerController().GetActionTypeByNavName(ViewBag.AdminModel.RoleType,ViewBag.AdminModel.RoleId,dr["name"].ToString(),dr["action_type"].ToString()))" />
+                                            <input type="hidden" id="hidLayer" name="hidLayer" value="@dr["class_layer"]" />
+                                            @{
+                                                int layer = Utils.StrToInt(dr["class_layer"].ToString());
+                                                if (layer == 1)
+                                                {
+                                                    result = LitImg1;
+                                                }
+                                                else
+                                                {
+                                                    result = string.Format(LitStyle, (layer - 2) * 24, LitImg2, LitImg1);
+                                                }
+                                            }
+                                            @Html.Raw(result)
+                                            @dr["title"]
+                                        </td>
+                                        <td align="center">
+                                            <label class="checkall"><input name="checkAll" type="checkbox" class="ace"><span class="lbl"></span></label>
+                                        </td>
+                                        <td>
+                                            <span id="cblActionType_@(i+1)" class="cbllist">
+                                                @{
+                                                    string strSelect = string.Empty;
+                                                    string[] actionTypeArr = dr["action_type"].ToString().Split(',');
+                                                    for (int j = 0; j < actionTypeArr.Length; j++)
+                                                    {
+                                                        if (Utils.ActionType().ContainsKey(actionTypeArr[j]))
+                                                        {
+                                                            if (ViewBag.ListRoleValue != null)
+                                                            {
+                                                                string nav_name = dr["name"].ToString();
+                                                                string action_type = actionTypeArr[j];
+                                                                List<NC.Model.Models.NcManagerRoleValue> listRV = ViewBag.ListRoleValue as List<NC.Model.Models.NcManagerRoleValue>;
+                                                                NC.Model.Models.NcManagerRoleValue modelt = listRV.Find(p => p.NavName== nav_name && p.ActionType== action_type);
+                                                                strSelect = "";
+                                                                if (modelt != null)
+                                                                {
+                                                                    strSelect = "checked";
+                                                                }
+                                                            }
+                                                            <input type="checkbox" id="cblActionType_@(i+1)_@(j+1)" name="@dr["name"]" class="cbllist" value="@actionTypeArr[j]" @strSelect />
+                                                            <label for="cblActionType_@(i+1)_@(j+1)">@Utils.ActionType()[actionTypeArr[j]]</label>
+                                                        }
+                                                    }
+                                                }
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-info" type="submit" id="btnSubmit">
+                        <i class="fa fa-check bigger-110"></i>
+                        提交保存
+                    </button>
+                    &nbsp; &nbsp; &nbsp;
+                    <button class="btn" type="button" onclick="javascript:location.href='@Url.Action("Role_List", "Manager", new { Area="ad_min"})';">
+                        <i class="fa fa-reply bigger-110"></i>
+                        返回列表
+                    </button>
+                    <div id="msgtips"></div>
+                </div>
+            }
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+@section includeJs{
+    <script type="text/javascript">
+    $(function () {
+      $saveForm=function () {
+            $.ajaxPostJson("@Url.Action("RoleSave", "Manager", new {Area="ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $confirm("保存成功，是否继续添加！", function () {
+                        $("#btnSubmit").attr("disabled", false);
+                        $("#msgtips").hide();
+                    }, function () {
+                        var url = "Role_List";
+                        self.location = url;
+                    });
+                } else {
+                    $alert("保存失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("保存异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在保存，请稍候...");
+            });
+          return false;
+        };
+        //初始化表单验证
+        $("#mainForm").initValidform1($saveForm);
+    });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            //权限全选
+            $("input[name='checkAll']").click(function () {
+                if ($(this).prop("checked") == true) {
+                    $(this).parent().parent().siblings("td").find("input[type='checkbox']").prop("checked", true);
+                } else {
+                    $(this).parent().parent().siblings("td").find("input[type='checkbox']").prop("checked", false);
+                }
+            });
+            //权限全选
+            $("input[name='chkAll']").click(function () {
+                if ($(this).prop("checked") == true) {
+                    $("input:checkbox").prop("checked", true);
+                } else {
+                    $("input:checkbox").prop("checked", false);
+                }
+            });
+        });
+    </script>
+}

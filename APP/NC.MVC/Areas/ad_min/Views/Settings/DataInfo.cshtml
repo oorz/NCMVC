@@ -1,0 +1,116 @@
+﻿@{
+    /*
+    *说明：数据库信息
+    *作者：wyd 2016-12-16
+    *修改：
+    *备注：/admin/manager/datainfo
+    */
+}
+@{
+    ViewBag.Title = "数据库信息";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+<div class="main-content">
+    <div class="page-content">
+        <h3>数据库运行状态：</h3>
+        <table class="table table-striped table-bordered table-hover ltable">
+            <thead>
+                <tr>
+                    <th scope="col">服务器名称</th>
+                    <th scope="col">总连接数</th>
+                    <th scope="col">最大连接</th>
+                    <th scope="col">TimeTicks</th>
+                    <th scope="col">总工作时间</th>
+                    <th scope="col">总空闲时间</th>
+                    <th scope="col">总IO输入输出</th>
+                    <th scope="col">接收包</th>
+                    <th scope="col">发送包</th>
+                    <th scope="col">错误包</th>
+                    <th scope="col">读</th>
+                    <th scope="col">写</th>
+                    <th scope="col">读写错误</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow dr in ViewBag.DataStatus.Rows)
+                {
+                    <tr>
+                        <td>@dr["服务器名称"]</td>
+                        <td>@dr["总连接数"]</td>
+                        <td>@dr["最大连接"]</td>
+                        <td>@dr["TimeTicks"]</td>
+                        <td>@dr["总工作时间"]</td>
+                        <td>@dr["总空闲时间"]</td>
+                        <td>@dr["总IO输入输出"]</td>
+                        <td>@dr["接收包"]</td>
+                        <td>@dr["发送包"]</td>
+                        <td>@dr["错误包"]</td>
+                        <td>@dr["读"]</td>
+                        <td>@dr["写"]</td>
+                        <td>@dr["读写错误"]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3>数据库文件信息：</h3>
+        <table class="table table-striped table-bordered table-hover ltable">
+            <thead>
+                <tr>
+                    <th>fileid</th>
+                    <th>groupid</th>
+                    <th>size</th>
+                    <th>maxsize</th>
+                    <th>growth</th>
+                    <th>status</th>
+                    <th>perf</th>
+                    <th>name</th>
+                    <th>filename</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow dr in ViewBag.FileInfo.Rows)
+                {
+                    <tr>
+                        <td>@dr["fileid"]</td>
+                        <td>@dr["groupid"]</td>
+                        <td>@dr["size"]</td>
+                        <td>@dr["maxsize"]</td>
+                        <td>@dr["growth"]</td>
+                        <td>@dr["status"]</td>
+                        <td>@dr["perf"]</td>
+                        <td>@dr["name"]</td>
+                        <td>@dr["filename"]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3>数据库配置信息：</h3>
+        <table class="table table-striped table-bordered table-hover ltable">
+            <thead>
+                <tr>
+                    <th scope="col">name</th>
+                    <th scope="col">minimum</th>
+                    <th scope="col">maximum</th>
+                    <th scope="col">config_value</th>
+                    <th scope="col">run_value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow dr in ViewBag.Configure.Rows)
+                {
+                    <tr>
+                        <td>@dr["name"]</td>
+                        <td>@dr["minimum"]</td>
+                        <td>@dr["maximum"]</td>
+                        <td>@dr["config_value"]</td>
+                        <td>@dr["run_value"]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

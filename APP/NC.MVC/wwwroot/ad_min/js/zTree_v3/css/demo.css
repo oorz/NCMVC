@@ -1,0 +1,15 @@
+input.radio {margin: 0 2px 0 8px;}
+input.radio.first {margin-left:0;}
+input.empty {color: lightgray;}
+code {color: #2f332a;}
+.highlight_red {color:#A60000;}
+.highlight_green {color:#A7F43D;}
+li {list-style: circle;font-size: 12px;}
+li.title {list-style: none;}
+ul.list {margin-left: 17px;}
+
+div.content_wrap {width: 100%;height:600px;}
+div.content_wrap div.left{float: left;width: 20%;}
+div.content_wrap div.right{float: right;width: 80%; height:98%;}
+
+ul.ztree {margin-top: 10px;border: 1px solid #617775;background: #f0f6e4;width:98%;height:480px;overflow-y:scroll;overflow-x:auto;}

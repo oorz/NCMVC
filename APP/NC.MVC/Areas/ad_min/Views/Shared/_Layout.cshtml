@@ -1,0 +1,60 @@
+﻿@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="favicon.ico">
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" asp-append-version="true" />
+        <link href="~/ad_min/skin/icon/iconfont.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/ad_min/skin/animsition.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/ad_min/skin/animate.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/ad_min/skin/layout.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/ad_min/skin/nav.css?v=1.0.0" asp-append-version="true">
+        <link rel="stylesheet" href="~/ad_min/js/artdialog/ui-dialog.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/ad_min/cms_os/site.css" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" asp-append-version="true" />
+        <link href="~/ad_min/skin/icon/iconfont.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/ad_min/skin/animsition.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/ad_min/skin/animate.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/ad_min/skin/layout.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/ad_min/skin/nav.css?v=1.0.0" asp-append-version="true">
+        <link rel="stylesheet" href="~/ad_min/js/artdialog/ui-dialog.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/ad_min/cms_os/site.css" asp-append-version="true" />
+    </environment>
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;url=ie.html" />
+    <![endif]-->
+    @RenderSection("includecss", required: false)
+</head>
+<body class="gray-bg">
+    <!-- 页面内容 -->
+    @RenderBody()
+    <!-- /页面内容 -->
+    <!-- 全局js -->
+    <script src="~/ad_min/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/ad_min/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/ad_min/js/plugins/layer/layer.min.js"></script>
+    <script type="text/javascript" src="~/ad_min/js/artdialog/dialog-plus-min.js"></script>
+    <script src="~/ad_min/cms_os/cms_main.js"></script>
+    <!--页面自定义js-->
+    @RenderSection("includeJs", required: false)
+    <!--/页面自定义js-->
+</body>
+<!-- END BODY -->
+</html>

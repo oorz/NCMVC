@@ -1,0 +1,134 @@
+﻿@{
+    /*
+    *说明：后台用户编辑
+    *作者：wyd 2016-12-01
+    *修改：
+    *备注：/admin/manager/manager_edit
+    */
+}
+@{
+    ViewBag.Title = "菜单编辑";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model.Models;
+@using NC.MVC.Areas.ad_min.Controllers
+@model NcManager
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-6">
+            @using (Html.BeginForm("ManagerSave", "Manager", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+            {
+                <input type="hidden" id="act" name="act" value="@ViewBag.action" />
+                <input type="hidden" name="id" value="@ViewBag.id" />
+                <input type="hidden" name="dept_id" value="@ViewBag.dept_id" />
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtName">所属角色</label>
+                    <div class="col-sm-9">
+                        <select name="role_id" id="role_id">
+                            @foreach (DataRow dr in new ManagerController().BindRole(" and id>1").Rows)
+                            {
+                                <option value="@dr["id"]" @((Utils.StrToInt(dr["id"].ToString()) == Model.RoleId) ? " selected=\"selected\"" : "")>@dr["role_name"]</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">登录名</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.UserName, new { id = "user_name", @class = "input normal", datatype = "*1-100", sucmsg = " ", ajaxurl = @Url.Action("manager_validate", "manager", new { Area = "ad_min" }) })
+                        <span class="Validform_checktip">*登录名不能为空！</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">登录密码</label>
+                    <div class="col-sm-9">
+                        @Html.PasswordFor(model => model.Password, new { id = "password", @class = "input normal", datatype = "*6-20", nullmsg = "请设置密码", errormsg = "密码范围在6-20位之间", sucmsg = " ", value = "123456" })
+                        <span class="Validform_checktip">*</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">确认密码</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password1" id="password1" class="input normal" datatype="*" recheck="Password" nullmsg="请再输入一次密码" errormsg="两次输入的密码不一致" sucmsg=" " value="123456" />
+                        <span class="Validform_checktip">*</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">姓名</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.RealName, new { id = "real_name", @class = "input normal", datatype = "*", sucmsg = " " })
+                        <span class="Validform_checktip">*</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">电话</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.Telephone, new { id = "telephone", @class = "input normal", datatype = "*", sucmsg = " " })
+                        <span class="Validform_checktip">*</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-info" type="submit" id="btnSubmit">
+                        <i class="fa fa-check bigger-110"></i>
+                        提交保存
+                    </button>
+                    &nbsp; &nbsp; &nbsp;
+                    <button class="btn" type="button" onclick="javascript:location.href='@Url.Action("Managers", "Manager", new { Area="ad_min"})';">
+                        <i class="fa fa-reply bigger-110"></i>
+                        返回列表
+                    </button>
+                    <div id="msgtips"></div>
+                </div>
+            }
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+@section includeJs{
+<script type="text/javascript">
+        $saveForm = function() {
+            $.ajaxPostJson("@Url.Action("ManagerSave", "Manager", new {Area="ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $confirm("保存成功，是否继续添加！", function () {
+                        $("#btnSubmit").attr("disabled", false);
+                        $("#msgtips").hide();
+                    }, function () {
+                        var url = "Managers";
+                        self.location = url;
+                    });
+                } else {
+                    $alert("保存失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("保存异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在保存，请稍候...");
+                });
+            return false;
+        }
+    $(function () {
+        //初始化表单验证
+        $("#mainForm").initValidform1($saveForm);
+        if ($("#act").val().toLowerCase() == "edit") {//新增时验证用户是否重复
+            $("#user_name").removeAttr("ajaxurl");
+        }
+    });
+
+</script>
+}

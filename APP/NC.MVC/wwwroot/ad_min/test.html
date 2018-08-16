@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>	
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<style>
+	div { 
+		color:blue; 
+	}
+	span { 
+		color:red; 
+	}
+</style>
+</head>
+<body>
+	
+<div class="btn" style="width: 200px;color: red; background: #bbasdf;">
+	存储的值为
+	<span class="child" data-id="123">asdf</span>
+</div>
+<script>
+$(function () { 
+	$(".btn").on("click",".child",function(){
+		alert($(this).data("id"));
+	});
+})
+</script>
+ 
+</body>
+</html>

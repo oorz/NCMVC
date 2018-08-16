@@ -1,0 +1,91 @@
+﻿@{
+    /*
+    *说明：登陆界面
+    *作者：wyd 2018-03-10
+    *修改：
+    *备注：
+    */
+    ViewBag.Title = "登录界面";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model NC.Model.Models.NcManager
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="WUI后台主题,后台bootstrap框架,后台HTML,响应式后台">
+    <meta name="description" content="WUI是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，使用了Html5+CSS3等现代技术">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <environment include="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" asp-append-version="true" />
+        <link rel="stylesheet" href="~/ad_min/skin/layout.css" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" asp-append-version="true" />
+        <link rel="stylesheet" href="~/ad_min/skin/layout.min.css" asp-append-version="true" />
+    </environment>
+    <link href="~/ad_min/skin/animate.css" rel="stylesheet">
+
+
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;url=ie.html" />
+    <![endif]-->
+</head>
+
+<body class="blue-bg">
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name"> W U I </h1>
+            </div>
+            <h3>欢迎使用 WUI</h3>
+            <form class="m-t" role="form" action="@Url.Action("LogIn")" method="post">
+                <div class="form-group">
+                    <input type="text" name="userName" class="form-control" placeholder="用户名" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="passWord" class="form-control" placeholder="密  码" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登录</button>
+                <p class="text-info text-center">版权所有 WUI Copyright © 2008 - 2018</p>
+            </form>
+        </div>
+    </div>
+    <!-- 全局js -->
+
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous">
+        </script>
+    </environment>
+    <script src="~/ad_min/js/plugins/layer/layer.min.js" asp-append-version="true"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+﻿[2018-08-07 18:51:23.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:15.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:17.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:24.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:24.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:25.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:25.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:25.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:26.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:27.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:31.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:52:33.63]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：settings,action：databackup
+[2018-08-07 18:57:02.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:57:06.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:57:15.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:58:33.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:58:38.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 18:58:49.63]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:28.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:36.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:38.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:44.73]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - 由于目标计算机积极拒绝，无法连接。)
+[2018-08-07 19:06:44.73]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - 由于目标计算机积极拒绝，无法连接。)
+[2018-08-07 19:06:44.73]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：manager,action：role_list
+[2018-08-07 19:06:44.73]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：manager,action：dept_manager
+[2018-08-07 19:06:48.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:48.73]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - 由于目标计算机积极拒绝，无法连接。)
+[2018-08-07 19:06:50.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:53.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:53.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:53.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:53.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:53.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:58.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:06:59.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:07:03.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:07:07.73]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-07 19:07:08.73]Information|NC.Core.DbCommand|ZZCMS

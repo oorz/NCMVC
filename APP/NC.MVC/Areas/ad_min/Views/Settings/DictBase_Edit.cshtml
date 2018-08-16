@@ -1,0 +1,104 @@
+﻿@{
+    /*
+    *说明：字典编辑
+    *作者：wyd 2016-12-16
+    *修改：
+    *备注：/admin/manager/dictbase_edit
+    */
+}
+@{
+    ViewBag.Title = "字典编辑";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model.Models;
+@model NcDictbase
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-9">
+            @using (Html.BeginForm("DictBaseSave", "Settings", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+            {
+                <input type="hidden" name="act" value="@ViewBag.action" />
+                <input type="hidden" name="id" value="@ViewBag.id" />
+
+                <div class="tab-content">
+                    <dl>
+                        <dt>共通数据类别</dt>
+                        <dd><input name="txtKey_Type" type="text" value="@Model.KeyType" id="txtKey_Type" class="input normal" /> <span class="Validform_checktip">*全部小写</span></dd>
+                    </dl>
+                    <dl>
+                        <dt>项目代码</dt>
+                        <dd><input name="txtKey_Code" type="text" value="@Model.KeyCode" id="txtKey_Code" class="input normal" /> <span class="Validform_checktip">*与共同类别形成唯一键</span></dd>
+                    </dl>
+                    <dl>
+                        <dt>项目名称</dt>
+                        <dd><input name="txtKey_Value" type="text" value="@Model.KeyValue" id="txtKey_Value" class="input normal" /> <span class="Validform_checktip">*</span></dd>
+                    </dl>
+                    <dl>
+                        <dt>排序数字</dt>
+                        <dd>
+                            <input name="txtSortId" type="text" value="@Model.SortId" id="txtSortId" class="input t120" datatype="n" sucmsg=" " />
+                            <span class="Validform_checktip">*数字，越小越向前</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                            <button class="btn btn-info" type="submit" id="btnSubmit">
+                                <i class="fa fa-check bigger-110"></i>
+                                提交保存
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="button" onclick="javascript:history.back(-1);">
+                                <i class="fa fa-reply bigger-110"></i>
+                                返回上一页
+                            </button>
+                            <div id="msgtips"></div>
+                        </dd>
+                    </dl>
+                </div>
+
+            }
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+@section includeJs{
+    <script type="text/javascript">
+    $(function () {
+        //form提交
+        $saveForm =function () {
+            //alert($("#mainForm").serialize());
+            //return false;
+            $.ajaxPostJson("@Url.Action("DictBaseSave", "Settings", new { Area = "ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $confirm("保存成功，是否继续添加！", function () {
+                        $("#btnSubmit").attr("disabled", false);
+                        $("#msgtips").hide();
+                    }, function () {
+                        var url = "DictBase_List";
+                        self.location = url;
+                    });
+                } else {
+                    $alert("保存失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("保存异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在保存，请稍候...");
+            });
+            return false;
+        };
+        //初始化表单验证
+        $("#mainForm").initValidform1($saveForm);
+    });
+    </script>
+}

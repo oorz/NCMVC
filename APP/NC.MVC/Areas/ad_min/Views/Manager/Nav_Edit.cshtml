@@ -1,0 +1,179 @@
+﻿@{
+    /*
+    *说明：菜单编辑
+    *作者：wyd 2016-08-30
+    *修改：
+    *备注：/admin/manager/nav_list
+    */
+}
+@{
+    ViewBag.Title = "菜单编辑";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model.Models;
+@using NC.Lib;
+@model NcNavigation
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-9">
+            @using (Html.BeginForm("NavSave", "Manager", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+            {
+                <input type="hidden" name="act" value="@ViewBag.action" />
+                <input type="hidden" name="id" value="@ViewBag.id" />
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtName">上级导航</label>
+                    <div class="col-sm-9">
+                        <select name="parent_id" id="parent_id">
+                            <option value="0">无父级导航</option>
+                            @foreach (DataRow dr in new AdminBase().GetNavList().Rows)
+                            {
+                                <option value="@dr["id"]" @((Utils.StrToInt(dr["id"].ToString()) == Model.ParentId) ? " selected=\"selected\"" : "")>
+                                    @{
+                                        int layer = Utils.StrToInt(dr["class_layer"].ToString());
+                                        if (layer == 1)
+                                        {
+                                            @dr["title"]
+                                        }
+                                        else
+                                        {
+                                            string title = dr["title"].ToString();
+
+                                            title = "├ " + title;
+                                            title = Utils.StringOfChar(layer - 1, "　") + title;
+                                            @title
+                                        }
+                                    }
+                                </option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSortId">排序</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.SortId, new { id = "sort_id", @class = "input t120", datatype = "n", sucmsg = " " })
+                        <span class="Validform_checktip">*数字，越小越向前</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="is_lock">是否隐藏</label>
+                    <div class="col-sm-9">
+                        <label for="is_lock"><input name="is_lock" id="is_lock" type="checkbox" class="ace ace-switch ace-switch-5" @(Model.IsLock == 1 ? "checked=true" : "") /><span class="lbl"></span></label>
+                        <span class="Validform_checktip">*隐藏后不显示在界面导航菜单中。</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtName">调用别名</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="txtName" name="txtName" class="input normal" value="@Model.Name" datatype="/^[a-zA-Z0-9\-\_]{2,50}$/" errormsg="请填写正确的ID" sucmsg=" " ajaxurl="@Url.Action("nav_validate", "manager", new { Area="ad_min"})?old_name=@Model.Name"><span class="Validform_checktip">权限控制名称，只允许字母、数字、下划线，与栏目管理-栏目名称相对应。</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtTitle">导航标题</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="txtTitle" name="txtTitle" class="input normal" value="@Model.Title" datatype="*1-100" sucmsg=" "><span class="Validform_checktip">*导航中文标题，100字符内</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtSubTitle">副标题</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="txtSubTitle" name="txtSubTitle" class="input normal" value="@Model.SubTitle" datatype="*0-100" sucmsg=" "><span class="Validform_checktip">非必填，当导航拥有两个名称时使用</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="txtLinkUrl">链接地址</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="txtLinkUrl" name="txtLinkUrl" class="input normal" value="@Model.LinkUrl"><span class="Validform_checktip">当前管理目录，有子导航不用填</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="remark">备注说明</label>
+                    <div class="col-sm-9">
+                        <textarea class="input normal" id="remark" name="remark">@Model.Remark</textarea><span class="Validform_checktip">非必填，可为空</span>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="cblActionType">权限资源</label>
+                    <div class="col-sm-9">
+                        @{
+                            int i = 0;
+                            foreach (KeyValuePair<string, string> kvp in Utils.ActionType())
+                            {
+                                <label for="cblActionType_@i"><input id="cblActionType_@i" type="checkbox" name="cblActionType" class="ace" value="@kvp.Key" @(Model.ActionType == null ? "" : (Model.ActionType.Contains(kvp.Key) ? "checked='true'" : "")) /><span class="lbl">@(kvp.Value)(@kvp.Key)</span></label>
+                                i++;
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-info" type="submit" id="btnSubmit">
+                        <i class="fa fa-check bigger-110"></i>
+                        提交保存
+                    </button>
+                    &nbsp; &nbsp; &nbsp;
+                    <button class="btn" type="button" onclick="javascript:history.back(-1);">
+                        <i class="fa fa-reply bigger-110"></i>
+                        返回上一页
+                    </button>
+                    <div id="msgtips"></div>
+                </div>
+            }
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+</div>
+@section includeJs{
+<script type="text/javascript">
+    $saveForm=function () {
+        //alert($("#mainForm").serialize());
+        //return false;
+        $.ajaxPostJson("@Url.Action("NavSave", "Manager", new {Area="ad_min" })", $("#mainForm").serialize(), function (result) {
+            if (result.status > 0) {
+                $confirm("保存成功，是否继续添加！", function () {
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }, function () {
+                    var url = "Nav_List";
+                    self.location = url;
+                });
+            } else {
+                $alert("保存失败！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }
+        }, function (result) {
+            $alert("保存异常！");
+            $("#btnSubmit").attr("disabled", false);
+            $("#msgtips").hide();
+        }, function (XMLHttpRequest) {
+            $("#btnSubmit").attr("disabled", true);
+            $("#msgtips").show();
+            $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+            $("#msgtips").text("正在保存，请稍候...");
+            });
+        return false;
+    };
+    $(function () {
+        //初始化表单验证
+        $("#mainForm").initValidform1($saveForm);
+        //if ($("#action").val().toLowerCase() == "edit") {//新增时验证用户是否重复
+        //    $("#txtName").removeAttr("ajaxurl");
+        //}
+    });
+</script>
+}

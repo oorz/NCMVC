@@ -1,0 +1,59 @@
+﻿@*<div class="navbar navbar-default" id="navbar" style="display:block;">
+    <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+    </script>
+
+    <div class="navbar-container" id="navbar-container">
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small>
+                    <i class="fa fa-leaf"></i>
+                    @(new ManageController().siteConf.webname)
+                </small>
+            </a><!-- /.brand -->
+        </div><!-- /.navbar-header -->
+        @{
+            //NC.Model.manager adminInfo = new NC.Model.manager();
+            ////adminInfo= new ManageController().GetAdminInfo(); //管理员信息
+            NC.Model.manager adminInfo = new NC.Model.manager();
+            if (Session["admin_info"]!=null) { adminInfo = Session["admin_info"] as NC.Model.manager; }
+        }
+        <div class="navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li class="light-blue">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <span class="user-info" style="padding-top:10%;">
+                            @(adminInfo == null ? "" : adminInfo.user_name),您好！
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                    </a>
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="@Url.Action("sys_config", "settings", new { Area = "ad_min" })">
+                                <i class="fa fa-cog"></i>
+                                系统参数设置
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:dialog('@Url.Action("manager_edit", "Manager", new { Area = "ad_min" })?act=Edit&id=@adminInfo.id&dept_id=0')">
+                                <i class="fa fa-user"></i>
+                                个人资料
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("LoginOut", "Login", new { Area = "ad_min" })">
+                                <i class="fa fa-off"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
+</div>
+<script type="text/javascript">
+    function dialog(url) {
+        lhgShowDialog("用户管理", url, document.body.clientWidth - (document.body.clientWidth * 0.2), document.body.scrollHeight - (document.body.scrollHeight * 0.2));
+    }
+</script>*@

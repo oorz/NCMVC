@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\ad_min\lib\**" />
+    <Compile Remove="bin\Debug\netcoreapp2.0\dback\**" />
+    <Compile Remove="des\**" />
+    <Content Remove="Areas\ad_min\lib\**" />
+    <Content Remove="bin\Debug\netcoreapp2.0\dback\**" />
+    <Content Remove="des\**" />
+    <EmbeddedResource Remove="Areas\ad_min\lib\**" />
+    <EmbeddedResource Remove="bin\Debug\netcoreapp2.0\dback\**" />
+    <EmbeddedResource Remove="des\**" />
+    <None Remove="Areas\ad_min\lib\**" />
+    <None Remove="bin\Debug\netcoreapp2.0\dback\**" />
+    <None Remove="des\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\ad_min\Controllers\FrameController.cs" />
+    <Compile Remove="Areas\ad_min\Controllers\ManageBase.cs" />
+    <Compile Remove="Areas\ad_min\Controllers\WeChatController.cs" />
+    <Compile Remove="Areas\AreaNames.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EnyimMemcachedCore" Version="2.1.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NC.Common\NC.Common.csproj" />
+    <ProjectReference Include="..\NC.Core\NC.Core.csproj" />
+    <ProjectReference Include="..\NC.Lib\NC.Lib.csproj" />
+    <ProjectReference Include="..\NC.Model\NC.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp2.0\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="dback\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\ad_min\Views\Manager\Dept_Manager.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Managers.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Manager_Edit.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Manager_Log.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Nav_Edit.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Nav_List.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Role_Edit.cshtml" />
+    <None Include="Areas\ad_min\Views\Manager\Role_List.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\CreateJson.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\DataBackUp.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\DataInfo.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\DictBase_Edit.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\DictBase_List.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\DictCache_Edit.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\DictCache_List.cshtml" />
+    <None Include="Areas\ad_min\Views\Settings\Sys_Config.cshtml" />
+    <None Include="wwwroot\ad_min\js\artdialog\dialog-min.js" />
+    <None Include="wwwroot\ad_min\js\artdialog\dialog-plus-min.js" />
+    <None Include="wwwroot\ad_min\cms_os\cms_main.js" />
+    <None Include="wwwroot\ad_min\js\datepicker\calendar.js" />
+    <None Include="wwwroot\ad_min\js\datepicker\lang\en.js" />
+    <None Include="wwwroot\ad_min\js\datepicker\lang\zh-cn.js" />
+    <None Include="wwwroot\ad_min\js\datepicker\lang\zh-tw.js" />
+    <None Include="wwwroot\ad_min\js\datepicker\WdatePicker.js" />
+    <None Include="wwwroot\ad_min\js\Validform\Validform_v5.3.2.js" />
+    <None Include="wwwroot\ad_min\js\Validform\Validform_v5.3.2_min.js" />
+    <None Include="wwwroot\ad_min\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\ad_min\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\ad_min\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\ad_min\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\ad_min\js\bootstrap.min.js" />
+    <None Include="wwwroot\ad_min\js\contabs.js" />
+    <None Include="wwwroot\ad_min\js\jquery.min.js" />
+    <None Include="wwwroot\ad_min\js\plugins\layer\extend\layer.ext.js" />
+    <None Include="wwwroot\ad_min\js\plugins\layer\laydate\laydate.js" />
+    <None Include="wwwroot\ad_min\js\plugins\layer\layer.min.js" />
+    <None Include="wwwroot\ad_min\js\plugins\layer\layim\layim.js" />
+    <None Include="wwwroot\ad_min\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <None Include="wwwroot\ad_min\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <None Include="wwwroot\ad_min\js\webuploader\uploader.swf" />
+    <None Include="wwwroot\ad_min\js\webuploader\webuploader.min.js" />
+    <None Include="wwwroot\ad_min\js\welcome.js" />
+    <None Include="wwwroot\ad_min\js\wuiplus.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\css\awesomeStyle\awesome.less" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\css\awesomeStyle\fa.less" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\demo\cn\asyncData\getNodes.php" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\demo\cn\asyncData\getNodesForBigData.php" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery-1.4.4.min.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.all.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.all.min.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.core.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.core.min.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.excheck.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.excheck.min.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.exedit.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.exedit.min.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.exhide.js" />
+    <None Include="wwwroot\ad_min\js\zTree_v3\js\jquery.ztree.exhide.min.js" />
+    <None Include="wwwroot\ad_min\skin\default\ie_update.psd" />
+    <None Include="wwwroot\ad_min\skin\icon\iconfont.js" />
+    <None Include="wwwroot\ad_min\skin\icon\iconfont.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="configs\site.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

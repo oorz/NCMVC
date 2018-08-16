@@ -1,0 +1,153 @@
+﻿@{
+    /*
+    *说明：字典编辑
+    *作者：wyd 2016-12-16
+    *修改：
+    *备注：/admin/manager/dictbase_edit
+    */
+}
+@{
+    ViewBag.Title = "字典编辑";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.Edit.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+@using NC.Model.Models;
+@model NcDictcache
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-9">
+            @using (Html.BeginForm("DictBaseSave", "Settings", FormMethod.Post, new { id = "mainForm", @class = "form-horizontal" }))
+            {
+                <input type="hidden" name="act" value="@ViewBag.action" />
+                <input type="hidden" name="id" value="@ViewBag.id" />
+
+                <div class="tab-content">
+                    <dl>
+                        <dt>缓存标题</dt>
+                        <dd>
+                            <input name="txtTitle" type="text" id="txtTitle" class="input normal" value="@Model.Title" />
+                            <span class="Validform_checktip">缓存标题</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>依赖项</dt>
+                        <dd>
+                            <input name="txtDepend" type="text" id="txtDepend" class="input normal" value="@Model.Depend" />
+                            <span class="Validform_checktip">依赖项</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>缓存KEY</dt>
+                        <dd>
+                            <input name="txtCache_Key" type="text" id="txtCache_Key" class="input normal" value="@Model.CacheKey" />
+                            <span class="Validform_checktip">缓存KEY</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>过期时间</dt>
+                        <dd>
+                            <input name="txtCache_Exp" type="text" id="txtCache_Exp" class="input normal" value="@Model.CacheExp" />
+                            <span class="Validform_checktip">过期时间</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>缓存描述</dt>
+                        <dd>
+                            <textarea name="txtCache_Desc" rows="2" cols="20" id="txtCache_Desc" class="input normal">@Model.CacheDesc</textarea>
+                            <span class="Validform_checktip">非必填，可为空</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>排序数字</dt>
+                        <dd>
+                            <input name="txtSortId" type="text" value="@Model.SortId" id="txtSortId" class="input t120" datatype="n" sucmsg=" " />
+                            <span class="Validform_checktip">*数字，越小越向前</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>创建人</dt>
+                        <dd>
+                            <input name="txtCreated_Name" type="text" id="txtCreated_Name" class="input normal" value="@Model.CreatedName" />
+                            <span class="Validform_checktip">创建人</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>修改人</dt>
+                        <dd>
+                            <input name="txtUpdated_Name" type="text" id="txtUpdated_Name" class="input normal" value="@Model.UpdatedName" />
+                            <span class="Validform_checktip">修改人</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>状态</dt>
+                        <dd>
+                            <label>
+                                <input name="OStatus" class="ace " type="checkbox" @(Model.Ostatus == 1 ? "checked" : "")>
+                                <span class="lbl"></span>
+                            </label>
+                            <span class="Validform_checktip">选中为禁用</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                            <button class="btn btn-info" type="submit" id="btnSubmit">
+                                <i class="fa fa-check bigger-110"></i>
+                                提交保存
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="button" onclick="javascript:history.back(-1);">
+                                <i class="fa fa-reply bigger-110"></i>
+                                返回上一页
+                            </button>
+                            <div id="msgtips"></div>
+                        </dd>
+                    </dl>
+                </div>
+
+
+            }
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+@section includeJs{
+    <script type="text/javascript">
+        //form提交
+        $saveForm=function () {
+            //alert($("#mainForm").serialize());
+            //return false;
+            $.ajaxPostJson("@Url.Action("DictCacheSave", "Settings", new { Area = "ad_min" })", $("#mainForm").serialize(), function (result) {
+                if (result.status > 0) {
+                    $confirm("保存成功，是否继续添加！", function () {
+                        $("#btnSubmit").attr("disabled", false);
+                        $("#msgtips").hide();
+                    }, function () {
+                        var url = "DictCache_List";
+                        self.location = url;
+                    });
+                } else {
+                    $alert("保存失败！");
+                    $("#btnSubmit").attr("disabled", false);
+                    $("#msgtips").hide();
+                }
+            }, function (result) {
+                $alert("保存异常！");
+                $("#btnSubmit").attr("disabled", false);
+                $("#msgtips").hide();
+            }, function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", true);
+                $("#msgtips").show();
+                $("#msgtips").css('background', 'url("/ad_min/skin/default/icon_onload.gif") no-repeat 0 5px');
+                $("#msgtips").text("正在保存，请稍候...");
+                });
+            return false;
+        };
+        $(function () {
+            //初始化表单验证
+            $("#mainForm").initValidform1($saveForm);
+        });
+    </script>
+}

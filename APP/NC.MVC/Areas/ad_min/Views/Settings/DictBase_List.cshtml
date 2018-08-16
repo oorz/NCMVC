@@ -1,0 +1,141 @@
+﻿@{
+    /*
+    *说明：基础字典列表
+    *作者：wyd 2016-12-16
+    *修改：
+    *备注：/admin/manager/manager_log
+    */
+}
+@{
+    ViewBag.Title = "基础字典列表";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+<div class="main-content">
+  
+    <div class="page-content">
+        <div class="page-header">
+            <div class="toolbar">
+                <div class="l-list">
+                    <ul class="icon-list">
+                        <li><a href="dictbase_edit?act=@JHEnums.ActionEnum.Add"><i class="fa fa-pencil-square-o"></i><span>新增</span></a></li>
+                        <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i class="fa fa-check-square-o"></i><span>全选</span></a></li>
+                        <li><a id="btnDelete" class="del" href="javascript:;"><i class="fa fa-trash"></i><span>删除</span></a></li>
+                    </ul>
+                </div>
+                <div class="r-list">
+                    <input name="txtKeywords" type="text" id="txtKeywords" class="keyword" placeholder="请输入用户名" value="@ViewBag.keyword" />
+                    <button id="btnSearch" class="btn-search"><i class="fa fa-search"></i>查询</button>
+                </div>
+            </div>
+        </div><!-- /.page-header -->
+
+        <table class="table table-striped table-bordered table-hover ltable">
+            <thead>
+                <tr>
+                    <th width="8%">选择</th>
+                    <th align="left">数据类别</th>
+                    <th align="left">项目代码</th>
+                    <th align="left">项目名称</th>
+                    <th width="8%">操作</th>
+                </tr>
+            </thead>
+            <tbody id="page_list"></tbody>
+        </table>
+        <div id="pagination" class="default"></div>
+    </div>
+</div>
+@section includeJs{
+    <script src="~/ad_min/js/jq/jquery.pagination.js"></script>
+    <script type="text/javascript">
+    var $pgConfig = {
+        pgList: '#page_list',
+        pgDiv: '#pagination',
+        pageSize: '10',
+        currPage: '0',
+        param:{
+            keyword: '@ViewBag.keyword'
+        },
+        sendUrl: '@Url.Action("DictBase_Bind", "Settings", new { Area = "ad_min" })'
+    };
+    function getParam()
+    {
+        var params = "&keyword=" + $pgConfig.param.keyword;
+        return params;
+    }
+    $(function () {
+        //搜索事件
+        $("#btnSearch").click(function () {
+            var keyword = $(".keyword").val();
+            $pgConfig.param.keyword = keyword;
+            AjaxPgList(0);
+        });
+        //初始化列表
+        AjaxPgList(0);
+
+        //删除
+        $("#btnDelete").click(function () {
+            var ids = chkVal("chkId");
+            $confirm("您确定要删除吗？", function () {
+                $.ajaxPostJson("@Url.Action("DictBase_Del", "Settings", new { Area = "ad_min" })", { ids: ids }, function (result) {
+                    var url = "dictbase_list";
+                    delAlert(result.message, url);
+                }, function () {
+                    var url = "dictbase_list";
+                    delAlert("删除失败或权限不够！", url);
+                }
+                , function (XMLHttpRequest) {//beforeSend
+                    $("#btnDelete").attr("disabled", true);
+                });
+            })
+        });
+
+    });
+
+    /*分页*/
+    function AjaxPgList(currPage) {
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: $pgConfig.sendUrl + "?page_size=" + $pgConfig.pageSize + "&page_index=" + currPage+getParam(),
+            beforeSend: function (XMLHttpRequest) {
+                $($pgConfig.pgDiv).html('<div style="line-height:35px;width:100%">正在很努力加载，请稍候...</div>');
+            },
+            success: function (data) {
+                var strHtml = '';
+                var row = data.rows;
+                for (var i in row) {
+                    strHtml += '<tr>'
+                    + '<td class="center"><label class="checkall"><input name="chkId" type="checkbox" class="ace" value="' + row[i].id + '" /><span class="lbl"></span></label></td>'
+                    + '<td><a href="dictbase_edit?act=Edit&id=' + row[i].id + '">' + row[i].Key_Type + '</a></td>'
+                    + '<td>' + row[i].Key_Code + '</td>'
+                    + '<td>' + row[i].Key_Value + '</td>'
+                    + '<td align="center"><a href="dictbase_edit?act=Edit&id=' + row[i].id + '">修改</a></td>'
+                    + '</tr>';
+                }
+                $($pgConfig.pgList).html(strHtml);
+                pageCount = data.total;
+                $($pgConfig.pgDiv).pagination(pageCount, {
+                    callback: pageselectCallback,
+                    prev_text: "« 上一页",
+                    next_text: "下一页 »",
+                    items_per_page: $pgConfig.pageSize,
+                    num_display_entries: 5,//展示多少页后使用省略号
+                    current_page: currPage,
+                    num_edge_entries: 2,//省略号后显示多少页
+                    link_to: "javascript:;"
+                });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $($pgConfig.pgDiv).html('<div style="line-height:35px;width:100%">暂无数据</div>');
+            }
+        });
+    }
+    //分页点击事件
+    function pageselectCallback(page_id) {
+        AjaxPgList(page_id)
+    }
+    </script>
+}

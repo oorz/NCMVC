@@ -1,0 +1,34 @@
+﻿[2018-08-16 14:58:21.23]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 14:58:36.23]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 14:59:38.23]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 14:59:38.23]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 14:59:52.23]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 15:00:10.33]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 15:00:24.33]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 15:00:38.33]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 15:01:51.33]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 15:01:51.33]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 15:02:06.33]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 15:02:21.33]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 15:03:02.33]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 15:03:16.33]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 15:06:59.33]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 15:07:48.33]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 15:07:51.33]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 15:08:03.33]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 15:08:03.33]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 15:08:03.33]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 15:08:03.33]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 16:01:27.43]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 16:01:41.43]Error|NC.Core.DbCommand|DbCommand->GetSqlDataTable() 出错
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+[2018-08-16 16:01:41.43]Error|NC.MVC.HttpGlobalExceptionFilter|全局错误：areaName：,controllerName：home,action：index
+[2018-08-16 16:07:03.43]Information|NC.Core.DbCommand|ZZCMS
+[2018-08-16 16:07:18.43]Information|NC.Core.DbCommand|ZZCMS

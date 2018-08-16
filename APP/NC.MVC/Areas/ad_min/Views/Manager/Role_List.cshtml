@@ -1,0 +1,92 @@
+﻿@{
+    /*
+    *说明：角色管理
+    *作者：wyd 2016-11-30
+    *修改：
+    *备注：/admin/manager/role_list
+    */
+}
+@{
+    ViewBag.Title = "角色管理";
+    Layout = "~/Areas/ad_min/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@using NC.Common;
+@using NC.Core;
+<div class="main-content">
+    <div class="page-content">
+        <div class="page-header">
+            <div class="toolbar">
+                <div class="l-list">
+                    <ul class="icon-list">
+                        <li><a href="role_edit?act=@JHEnums.ActionEnum.Add"><i class="fa fa-pencil-square-o"></i><span>新增</span></a></li>
+                        <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i class="fa fa-check-square-o"></i><span>全选</span></a></li>
+                        <li><a id="btnDelete" class="del" href="javascript:;"><i class="fa fa-trash"></i><span>删除</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.page-header -->
+
+        <table class="table table-striped table-bordered table-hover ltable">
+            <thead>
+                <tr>
+                    <th class="center" width="8%">选择</th>
+                    <th align="left">角色名称</th>
+                    <th align="left" width="12%">类型</th>
+                    <th align="left" width="12%">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow dr in ViewBag.RoleList.Rows)
+                {
+                    <tr>
+                        <td class="center">
+                            <label class="checkall">
+                                <input name="chkId" type="checkbox" class="ace" value="@dr["id"]" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><a href="role_edit?act=Edit&id=@dr["id"]">@dr["role_name"]</a></td>
+                        <td>@(dr["role_type"].ToString() == "1" ? "超级用户" : "系统用户")</td>
+                        <td><a href="role_edit?act=Edit&id=@dr["id"]">修改</a> | <a href="javascript:roleDialog('@Url.Action("managers", "Manager")?rid=@dr["id"]');">角色人员</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section includeJs{
+    <script type="text/javascript">
+    function roleDialog(url) {
+        artShowDialog("用户管理", url, document.body.clientWidth - (document.body.clientWidth * 0.2), document.body.scrollHeight - (document.body.scrollHeight * 0.2));
+    }
+    $(function () {
+        //删除
+        $("#btnDelete").click(function () {
+            var ids = chkVal("chkId");
+            $confirm("您确定要删除吗？", function () {
+                $.ajaxGetJson("@Url.Action("RoleDel", "Manager", new {Area="ad_min" })", { ids: ids }, function (result) {
+                    //if (result.status > 0) {
+                    //    $alert(result.message);
+                    //} else {
+                    //    $alert(result.message);
+                    //}
+                    var url = "Role_List";
+                    delAlert(result.message, url);
+                }, function () {
+                    var url = "Role_List";
+                    delAlert("删除失败或权限不够！", url);
+                }
+                , function (XMLHttpRequest) {//beforeSend
+                    $("#btnDelete").attr("disabled", true);
+                });
+
+            })
+        });
+
+    });
+    </script>
+
+
+
+}
