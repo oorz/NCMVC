@@ -14264,11 +14264,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.MVC\\NC.MVC.csproj",
+      "projectUniqueName": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.MVC\\NC.MVC.csproj",
       "projectName": "NC.MVC",
-      "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.MVC\\NC.MVC.csproj",
+      "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.MVC\\NC.MVC.csproj",
       "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-      "outputPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.MVC\\obj\\",
+      "outputPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14287,17 +14287,17 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Common\\NC.Common.csproj": {
-              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Common\\NC.Common.csproj"
+            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj": {
+              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Common\\NC.Common.csproj"
             },
-            "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Core\\NC.Core.csproj": {
-              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Core\\NC.Core.csproj"
+            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Core\\NC.Core.csproj": {
+              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Core\\NC.Core.csproj"
             },
-            "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj": {
-              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj"
+            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj": {
+              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Lib\\NC.Lib.csproj"
             },
-            "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Model\\NC.Model.csproj": {
-              "projectPath": "G:\\魏亚东2018\\DEV\\NCMVC\\APP\\NC.Model\\NC.Model.csproj"
+            "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj": {
+              "projectPath": "g:\\魏亚东2018\\DEV\\NCMVC\\NCMVC\\APP\\NC.Model\\NC.Model.csproj"
             }
           }
         }
